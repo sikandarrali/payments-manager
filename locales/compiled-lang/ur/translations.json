@@ -1,0 +1,282 @@
+{
+  "alerts": {
+    "added": "اندراج کر دیا گیا ہے",
+    "deleted": "حذف کر دیا گیا ہے",
+    "exception": "آپ کی درخواست پر عمل نہیں کیا جا سکتا",
+    "noChanges": "ترمیم کرنے کے لئے کچھ بھی نہیں",
+    "updated": "ترمیم کر دی گئی ہے"
+  },
+  "buttons": {
+    "btnLoadMore": "مزید لوڈ کریں",
+    "btnLoading": "لوڈ ہو رہا ہے۔۔۔",
+    "cancel": "منسوخ کریں",
+    "installApp": "ایپ انسٹال کریں",
+    "save": "درج کریں",
+    "saveChanges": "تبدیلیاں محفوظ کریں",
+    "yesDelete": "ہاں، حذف کریں"
+  },
+  "edit": {
+    "alertUpdated": "ترمیم کر دی گئی ہے"
+  },
+  "general": {
+    "comma": ", ",
+    "loadingData": "ڈیٹا لوڈ ہے، براہ کرم انتظار کریں۔۔۔"
+  },
+  "groups": {
+    "addMembers": "ممبرشامل کریں",
+    "alertException": "آپ کی درخواست پر عمل نہیں کیا جا سکتا",
+    "alertGroupCreated": "گروپ بنایا دیا گیا ہے",
+    "alertGroupDeleted": "گروپ حذف کر دیا گیا ہے",
+    "alertGroupLeft": "آپ نے گروپ چھوڑ دیا ہے",
+    "alertGroupMemberAdded": "ممبر شامل کر دیا گیا ہے",
+    "alertGroupMemberAlreadyExisted": "ممبر پہلے ہی گروپ کا حصہ ہے",
+    "alertGroupMemberRemoved": "ممبر کو گروپ سے نکال دیا گیا ہے",
+    "alertGroupUpdated": "گروپ کا نام تبدیل کر دیا گیا ہے",
+    "alertNothingToUpdate": "ترمیم کرنے کے لئے کچھ بھی نہیں",
+    "badgeAdmin": "ایڈمن",
+    "badgeMember": "ممبر",
+    "badgePending": "زیر التواء",
+    "badgeYou": "آپ",
+    "btnAddMember": "شامل کریں",
+    "btnCreateNewGroup": "نیا گروپ بنائیں",
+    "btnLeaveGroup": "گروپ چھوڑیں",
+    "btnYesLeave": "ہاں، چھوڑ دیں",
+    "btnYesRemove": "ہاں، ہٹا دیں",
+    "createGroup": "گروپ بنائیں",
+    "deleteGroup": "گروپ حذف کریں",
+    "deleteGroupMember": "ممبر کو گروپ سے نکال دیں",
+    "deleteGroupMemberText1": "کیا آپ واقعی نکالنا چاہتے ہیں",
+    "deleteGroupMemberText2": "سے",
+    "deleteGroupMemberText3": "وہ اب بُکس کے ڈیٹا تک رسائی حاصل نہیں کرسکیں گے۔",
+    "deleteGroupText": "یہ مستقل طور پر حذف ہوجائے گا",
+    "deleteGroupUpdateEventText": "اس گروپ کے ساتھ شیئر کردہ تمام بُکس اب شیئر نہیں کی جائیں گی",
+    "editGroup": "گروپ میں ترمیم کریں",
+    "general_argument_invalid": "ایسی کارروائی کرنے سے قاصر",
+    "information": "اہم معلومات",
+    "informationP1": "جب کوئی نیا صارف شامل کیا جاتا ہے تو انہیں گروپ میں شامل ہونے کے لئے دعوت نامہ ای میل موصول ہوگا۔",
+    "informationP2": "صارفین کو مشترکہ ڈیٹا تک رسائی حاصل کرنے سے پہلے دعوت نامہ قبول کرنا",
+    "informationP3": "شامل کردہ ممبر بُکس اور اس کے تمام ڈیٹا اندراج، ترمیم اور دیکھنے کے قابل ہوںگے۔",
+    "labelAddMembers": "ممبر شامل کریں",
+    "labelEvents": "بُکس",
+    "labelEventsSharedWithThisGroup": "اس گروپ کے ساتھ شیئر کردہ بُکس",
+    "labelGroupName": "گروپ کا نام",
+    "labelMembers": "ممبران",
+    "labelMembersInGroup": "گروپ کے ممبران",
+    "labelNoEventsSharedWithThisGroup": "اس گروپ کے ساتھ کوئی بُکس شیئر نہیں کی گئیں",
+    "labelNoMembersInGroup": "گروپ میں کوئی ممبر نہیں ہے",
+    "labelYourGroups": "آپ کے گروپس",
+    "leaveGroupText1": "آپ گروپ چھوڑنے والے ہیں",
+    "leaveGroupText2": "اب آپ اس گروپ کے ساتھ شیئر کردہ بُکس اور دیگر ڈیٹا تک رسائی حاصل نہیں کرسکیں گے۔",
+    "noGroups": "کوئی گروپ نہیں ملا، پہلے گروپ بنائیں",
+    "text": "گروپس آپ کے بُکس کے ڈیٹا کو دوسروں کے ساتھ شیئر کرنے کا ایک طریقہ ہیں۔",
+    "title": "گروپس",
+    "tooltipPendingUser": "صارف نےابھی تک دعوت قبول نہیں کی۔",
+    "userEmailPlaceholder": "ممبر کی ای میل درج کریں"
+  },
+  "joinGroup": {
+    "btnBackToGroups": "گروپس پر واپس جائیں",
+    "general_argument_invalid": "گروپ میں شامل ہونے سے قاصر ہیں",
+    "loginAndCheckGroups": "آپ لاگ ان کر کے اپنے گروپس چیک کر سکتے ہیں:",
+    "membership_already_confirmed": "آپ اس گروپ کے رکن ہیں۔",
+    "membership_not_found": "گروپ میں شامل ہونے کا لنک غلط ہے۔",
+    "team_invalid_secret": "گروپ میں شامل ہونے کا لنک غلط ہے۔",
+    "team_invite_already_exists": "ممبر پہلے ہی گروپ کا حصہ ہے۔",
+    "team_invite_mismatch": "گروپ میں شامل ہونے کا لنک غلط ہے۔",
+    "team_not_found": "متعلقہ کروپ موجود نہیں۔",
+    "titleAlreadyJoined": "آپ پہلے ہی اس گروپ میں شامل ہو چکے ہیں۔",
+    "titleJoined": "آپ اس گروپ میں شامل ہو چکے ہیں۔",
+    "titleUnableToJoin": "گروپ میں شامل ہونے سے قاصر"
+  },
+  "labels": {
+    "addMoreDetails": "تاریخ، کرنسی اور تفصیلات وغیرہ شامل کریں۔",
+    "addMoreDetailsShort": "تفصیلات وغیرہ شامل کریں۔",
+    "amount": "رقم",
+    "atTime": "بوقت",
+    "bookType": "بُک کی قسم",
+    "createdBy": "اندراج کردہ",
+    "currency": "کرنسی",
+    "date": "تاریخ",
+    "delete": "حذف کریں",
+    "details": "تفصیلات",
+    "edit": "ترمیم کریں",
+    "group": "گروپ",
+    "invalidEmail": "غلط ای میل",
+    "khaataBook": "کھاتہ بُک",
+    "min1character": "کم سے کم 1 حرف",
+    "max100characters": "زیادہ سے زیادہ 100 حروف",
+    "max200characters": "زیادہ سے زیادہ 200 حروف",
+    "max20characters": "زیادہ سے زیادہ 20 حروف",
+    "max300characters": "زیادہ سے زیادہ 300 حروف",
+    "max50characters": "زیادہ سے زیادہ 50 حروف",
+    "max10numbers": "زیادہ سے زیادہ 10 نمبر",
+    "max10characters": "زیادہ سے زیادہ 10 حروف",
+    "name": "نام",
+    "noGroups": "کوئی گروپ نہیں ملا، پہلے شامل کریں",
+    "notSharedWithGroup": "کسی گروپ کے ساتھ شیئر نہیں کیا گیا",
+    "onDay": "کو",
+    "pickDate": "تاریخ منتخب کریں",
+    "recordBook": "ریکارڈ بُک",
+    "recordTypeIn": "ٓآمدنی",
+    "recordTypeOut": "خرچہ",
+    "required": "درکار ہے",
+    "selectGroup": "گروپ منتخب کریں",
+    "shareWithGroup": "گروپ کے ساتھ شئیر کریں",
+    "type": "ریکارڈ کی قسم",
+    "updatedBy": "ترمیم کردہ",
+    "viewCreatedEditedBy": "مزید معلومات",
+    "search": "تلاش کریں",
+    "searchRecords": "ریکارڈ تلاش کریں",
+    "searching": "تلاش جاری ہے، برائے کرم انتظار کریں"
+  },
+  "login": {
+    "withGoogle": "گوگل کے ساتھ لاگ ان کریں"
+  },
+  "logout": {
+    "btnLogout": "لاگ آؤٹ",
+    "text": "اگر آپ خود بخود لاگ آؤٹ نہیں ہوتے ہیں تو یہاں کلک کریں"
+  },
+  "months": {
+    "april": "اپریل",
+    "august": "اگست",
+    "comma": "،",
+    "december": "دسمبر",
+    "february": "فروری",
+    "january": "جنوری",
+    "july": "جولائی",
+    "june": "جون",
+    "march": "مارچ",
+    "may": "مئی",
+    "november": "نومبر",
+    "october": "اکتوبر",
+    "september": "ستمبر"
+  },
+  "navbar": {
+    "googleAccount": "گوگل اکاؤنٹ",
+    "hello": "السلام عليكم",
+    "links": {
+      "groups": "گروپس",
+      "home": "صفحه اول",
+      "diaries": "ڈائریاں",
+      "books": "بُکس",
+      "logout": "لاگ آؤٹ",
+      "settings": "ترتیبات"
+    }
+  },
+  "pageNotFound": {
+    "btnGoBack": "واپس ہوم",
+    "text": "صفحہ نہیں ملا"
+  },
+  "pages": {
+    "books": {
+      "add": "بُک درج کریں",
+      "addNew": "نئی بُک درج کریں",
+      "deletePage": "بُک حذف کریں",
+      "deletePageText": "یہ مستقل طور پر حذف ہوجائے گا",
+      "editPage": "بُک میں ترمیم کریں",
+      "noBooks": "کوئی بُکس نہیں ملی، نئی شامل کریں",
+      "titleBooks": "بُکس"
+    },
+    "diaries": {
+      "deletePageText": "یہ مستقل طور پر حذف ہوجائے گا",
+      "add": "ڈائری شامل کریں",
+      "addNew": "نئی ڈائری شامل کریں",
+      "deleteDiary": "ڈائری حذف کریں",
+      "editDiary": "ڈائری میں ترمیم کریں",
+      "noDiaries": "کوئی بُکس نہیں ملی، نئی شامل کریں",
+      "titleDiaries": "ڈائریاں",
+      "titleDiary": "ڈائری",
+      "noDiariesRecords": "ڈائری میں کوئی ریکارڈ نہیں، نیا شامل کریں"
+    },
+    "diariesRecords": {
+      "badgeCreatedByYou": "یہ بُک آپ کی درج کردہ ہے۔",
+      "badgeSharedWithGroup": "یہ ڈائری {groupName} گروپ کےساتھ شئیر ہے۔"
+    },
+    "records": {
+      "add": "ریکارڈ شامل کریں",
+      "addNew": "نیا ریکارڈ شامل کریں",
+      "allItemsShown": "تمام {count} ریکارڈ لوڈ کر دیے گئے ہیں",
+      "badgeCreatedByYou": "یہ بُک آپ کی درج کردہ ہے۔",
+      "badgeSharedWithGroup": "یہ بُک {groupName} گروپ کےساتھ شئیر ہے۔",
+      "deletePage": "ریکارڈ حذف کریں",
+      "deletePageText": "یہ مستقل طور پر حذف ہوجائے گا",
+      "editPage": "ریکارڈ میں ترمیم کریں",
+      "noSearchItemsFound": "آپ کی تلاش کے مطابق کوئی ریکارڈ موجود نہیں",
+      "numOfItemsMatchingSearch": "تلاش کے نتائج:",
+      "searchPlaceholder": "یہاں ٹائپ کریں۔۔۔",
+      "totalEntries": "کل اندراج: "
+    },
+    "home": {
+      "books": {
+        "p1": "اپنے روز مرہ کے اخراجات ریکارڈ کریں",
+        "p2": "مثلاً: روزنامچہ اور شادی کے اخراجات وغیرہ",
+        "title": "بُکس"
+      },
+      "diaries": {
+        "title": "ڈائریاں",
+        "p1": "روزانہ کے کام نوٹ کریں اور ترتیب دیں۔",
+        "p2": "مثلاً: کام کاج کی ڈائری"
+      },
+      "groups": {
+        "title": "گروپس",
+        "p1": "اپنی بُکس  اور ڈائریوں کا ڈیٹا دوسرے لوگوں کے ساتھ شیئر کریں"
+      },
+      "welcome": "خوش آمدید، "
+    }
+  },
+  "currencies": {
+    "pkr": "پاکستانی روپے",
+    "euro": "یورر",
+    "usd": "امریکی ڈالر"
+  },
+  "settings": {
+    "fontSize": {
+      "alertException": "حروف کا سائز تبدیل نہیں کیا جا سکتا",
+      "alertNothingToUpdate": "موجودہ حروف سائز ایک جیسا ہے",
+      "alertSuccess": "حروف کا سائز تبدل کر دیا گیا ہے",
+      "base": "ڈیفالٹ",
+      "change": "حروف کا سائز تبدیل کریں",
+      "lg": "بڑے",
+      "noFontSizesFound": "کوئی حروف کا سائز نہیں ملا",
+      "search": "حروف کا سائز تلاش کریں۔۔۔",
+      "selectFontSize": "حروف کا سائز منتخب کریں",
+      "sm": "چھوٹا",
+      "title": "حروف کا سائز",
+      "xl": "اضافی بڑا"
+    },
+    "language": {
+      "alertException": "زبان تبدیل کرنے سے قاصر",
+      "alertNothingToUpdate": "موجودہ زبان ایک جیسی ہے",
+      "alertSuccess": "زبان تبدیل کر دی گئی",
+      "change": "زبان تبدیل کریں",
+      "en": "انگریزی",
+      "noLanguagesFound": "کوئی زبانیں نہیں ملتی",
+      "search": "زبانیں تلاش کریں۔۔۔",
+      "selectLanguage": "زبان منتخب کریں۔۔۔",
+      "title": "زبان",
+      "ur": "اردو"
+    },
+    "profile": {
+      "alertException": "ترمیم کرنے سے قاصر",
+      "alertNameUpdated": "نام تبدیل کر دیا گیا ہے",
+      "alertNothingToUpdate": "ترمیم کرنے کے لئے کچھ بھی نہیں",
+      "editProfile": "پروفائل میں ترمیم کریں",
+      "name": "نام",
+      "title": "پروفائل"
+    },
+    "theme": {
+      "Blue": "نیلا",
+      "Green": "سبز",
+      "Orange": "سنتری",
+      "Rose": "گلاب",
+      "Slate": "سلیٹی",
+      "Stone": "پتھر",
+      "Violet": "ارغوانی رنگ",
+      "alertException": "تھیم تبدیل کرنے سے قاصر ہیں",
+      "alertNoChanges": "ترمیم کرنے کے لئے کچھ بھی نہیں",
+      "alertUpdated": "تھیم تبدیل کر دیا گیا ہے",
+      "editTitle": "تھیم کا انتخاب کریں",
+      "label": "تھیم"
+    },
+    "title": "ترتیبات"
+  }
+}

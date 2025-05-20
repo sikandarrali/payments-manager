@@ -1,0 +1,284 @@
+{
+  "alerts": {
+    "added": "Added Successfully",
+    "deleted": "Deleted Successfully",
+    "exception": "Unable to process your request",
+    "noChanges": "Nothing to update",
+    "updated": "Updated Successfully",
+    "markedAsPaid": "Marked as Paid",
+    "markedAsUnpaid": "Marked as Unpaid"
+  },
+  "buttons": {
+    "btnLoadMore": "Load more",
+    "btnLoading": "Loading...",
+    "cancel": "Cancel",
+    "installApp": "Install App",
+    "save": "Save Entry",
+    "saveChanges": "Save Changes",
+    "yesDelete": "Yes, delete"
+  },
+  "edit": {
+    "alertUpdated": "Name Updated Successfully!"
+  },
+  "general": {
+    "comma": ",",
+    "loadingData": "Loading data, please wait..."
+  },
+  "groups": {
+    "addMembers": "Add Members",
+    "alertException": "Unable to process your request",
+    "alertGroupCreated": "Group Created",
+    "alertGroupDeleted": "Group Deleted",
+    "alertGroupLeft": "You just left the Group",
+    "alertGroupMemberAdded": "Group Member Added",
+    "alertGroupMemberAlreadyExisted": "Member Already Part of the Group",
+    "alertGroupMemberRemoved": "Member Removed from Group",
+    "alertGroupUpdated": "Group Name Updated",
+    "alertNothingToUpdate": "Nothing to update",
+    "badgeAdmin": "admin",
+    "badgeMember": "member",
+    "badgePending": "pending",
+    "badgeYou": "you",
+    "btnAddMember": "Add",
+    "btnCreateNewGroup": "Create New Group",
+    "btnLeaveGroup": "Leave group",
+    "btnYesLeave": "Yes, Leave",
+    "btnYesRemove": "Yes, Remove",
+    "createGroup": "Create Group",
+    "deleteGroup": "Delete Group",
+    "deleteGroupMember": "Remove User from Group",
+    "deleteGroupMemberText1": "Do you really want to remove",
+    "deleteGroupMemberText2": "from",
+    "deleteGroupMemberText3": "They will not be able to access Books Data anymore.",
+    "deleteGroupText": "This will permanently delete",
+    "deleteGroupUpdateEventText": "All Books shared with this group would no longer be shared",
+    "editGroup": "Edit Group",
+    "general_argument_invalid": "Unable to  perform such action",
+    "information": "Important Information",
+    "informationP1": "When a new user is added they will receive an invitation email to join the group.",
+    "informationP2": "Users have to accept invitation before they can access shared data.",
+    "informationP3": "Added user will be able to Add, Update and View Books and all its Data.",
+    "labelAddMembers": "Add Members",
+    "labelEvents": "Books",
+    "labelEventsSharedWithThisGroup": "Books shared with this Group",
+    "labelGroupName": "Group name",
+    "labelMembers": "Members",
+    "labelMembersInGroup": "Members in Group",
+    "labelNoEventsSharedWithThisGroup": "No Books shared with this Group",
+    "labelNoMembersInGroup": "No Members in Group.",
+    "labelYourGroups": "Your groups",
+    "leaveGroupText1": "You're about to leave:",
+    "leaveGroupText2": "You will no longer be able to access Books & other data shared with this group.",
+    "noGroups": "No Groups found, Create Group First",
+    "text": "Groups are a way of sharing your Books Data with others.",
+    "title": "Groups",
+    "tooltipPendingUser": "User has not accepted invitation.",
+    "userEmailPlaceholder": "Enter User Email"
+  },
+  "joinGroup": {
+    "btnBackToGroups": "Back to Groups",
+    "general_argument_invalid": "Unable to Join Group",
+    "loginAndCheckGroups": "You can login and Check your groups:",
+    "membership_already_confirmed": "You're a member of this Group.",
+    "membership_not_found": "Invalid Invitation Link.",
+    "team_invalid_secret": "Invalid Invitation Link.",
+    "team_invite_already_exists": "User is already part of the Group.",
+    "team_invite_mismatch": "Invalid Invitation Link.",
+    "team_not_found": "No matching group found.",
+    "titleAlreadyJoined": "Already Joined.",
+    "titleJoined": "Group Joined",
+    "titleUnableToJoin": "Unable to Join Group"
+  },
+  "labels": {
+    "addMoreDetails": "Add Date, Currency & Details etc.",
+    "addMoreDetailsShort": "Add Details etc.",
+    "amount": "Amount",
+    "atTime": "at",
+    "bookType": "Book Type",
+    "createdBy": "Added by",
+    "currency": "Currency",
+    "date": "Date",
+    "delete": "Delete",
+    "details": "Details",
+    "edit": "Edit",
+    "group": "Group",
+    "invalidEmail": "invalid email",
+    "khaataBook": "Khaata Book",
+    "min1character": "min 1 character",
+    "max100characters": "max 100 characters",
+    "max200characters": "max 200 characters",
+    "max20characters": "max 20 characters",
+    "max300characters": "max 300 characters",
+    "max50characters": "max 50 characters",
+    "max10numbers": "max 10 numbers",
+    "max10characters": "max 10 characters",
+    "name": "Name",
+    "noGroups": "No Groups found, Add First",
+    "notSharedWithGroup": "Not Shared with any Group",
+    "onDay": "on",
+    "pickDate": "Choose Date",
+    "recordBook": "Record Book",
+    "recordTypeIn": "In",
+    "recordTypeOut": "Out",
+    "required": "required",
+    "selectGroup": "Select Group",
+    "shareWithGroup": "Share with Group",
+    "type": "Type",
+    "updatedBy": "Updated by",
+    "viewCreatedEditedBy": "More Information",
+    "search": "Search",
+    "searchRecords": "Search Records",
+    "searching": "Seaching, please wait..."
+  },
+  "login": {
+    "withGoogle": "Login with Google"
+  },
+  "logout": {
+    "btnLogout": "Logout",
+    "text": "If you're not logged out automatically, click here"
+  },
+  "months": {
+    "april": "April",
+    "august": "August",
+    "comma": ",",
+    "december": "December",
+    "february": "February",
+    "january": "January",
+    "july": "July",
+    "june": "June",
+    "march": "March",
+    "may": "May",
+    "november": "November",
+    "october": "October",
+    "september": "September"
+  },
+  "navbar": {
+    "googleAccount": "Google Account",
+    "hello": "Hello,",
+    "links": {
+      "groups": "Groups",
+      "home": "Home",
+      "diaries": "Diaries",
+      "books": "Books",
+      "logout": "Logout",
+      "settings": "Settings"
+    }
+  },
+  "pageNotFound": {
+    "btnGoBack": "Back home",
+    "text": "Page not found"
+  },
+  "pages": {
+    "books": {
+      "add": "Add Book",
+      "addNew": "Add New Book",
+      "deletePage": "Delete Book",
+      "deletePageText": "This will permanently delete",
+      "editPage": "Edit Book",
+      "noBooks": "No Books Found, Add New",
+      "titleBooks": "Books"
+    },
+    "diaries": {
+      "deletePageText": "This will permanently delete",
+      "add": "Add Diary",
+      "addNew": "Add New Diary",
+      "deleteDiary": "Delete Diary",
+      "editDiary": "Edit Diary",
+      "noDiaries": "No Diaries Found, Add New",
+      "titleDiaries": "Diaries",
+      "titleDiary": "Diary",
+      "noDiariesRecords": "No Records in the Diary, Add New"
+    },
+    "diariesRecords": {
+      "badgeCreatedByYou": "You're Admin of this Diary.",
+      "badgeSharedWithGroup": "This Diary is shared with {groupName} group."
+    },
+    "records": {
+      "add": "Add Record",
+      "addNew": "Add New Record",
+      "allItemsShown": "All {count} items loaded",
+      "badgeCreatedByYou": "You're Admin of this Book.",
+      "badgeSharedWithGroup": "This Book is shared with {groupName} group.",
+      "deletePage": "Delete Record",
+      "deletePageText": "This will permanently delete",
+      "editPage": "Edit Record",
+      "noSearchItemsFound": "No Records found for your Search",
+      "numOfItemsMatchingSearch": "Items found:",
+      "searchPlaceholder": "Type here to Search...",
+      "totalEntries": "Total Records: "
+    },
+    "home": {
+      "books": {
+        "p1": "Manage your Daily Expenses and All Monetary Transactions.",
+        "p2": "e.g. Roznamcha, Shadi Expenses etc.",
+        "title": "Books"
+      },
+      "diaries": {
+        "title": "Diaries",
+        "p1": "Manage your day-to-day Tasks.",
+        "p2": "e.g. To-do List, Task Planner etc."
+      },
+      "groups": {
+        "title": "Groups",
+        "p1": "Share your Books & Diaries Data with other users"
+      },
+      "welcome": "Welcome, "
+    }
+  },
+  "currencies": {
+    "pkr": "PKR - Pakistani Rupee",
+    "euro": "€ - Euro",
+    "usd": "$ - US Dollar"
+  },
+  "settings": {
+    "fontSize": {
+      "alertException": "Cannot Change Font Size",
+      "alertNothingToUpdate": "Current Font Size is same",
+      "alertSuccess": "Font Size Changed",
+      "base": "Default",
+      "change": "Change Font Size",
+      "lg": "Large",
+      "noFontSizesFound": "No Font Sizes found",
+      "search": "Search Font Sizes...",
+      "selectFontSize": "Select Font Size",
+      "sm": "Small",
+      "title": "Font Size",
+      "xl": "Extra Large"
+    },
+    "language": {
+      "alertException": "Unable to Change Language",
+      "alertNothingToUpdate": "Current Language is same",
+      "alertSuccess": "Language changed",
+      "change": "Change language",
+      "en": "English",
+      "noLanguagesFound": "No languages found",
+      "search": "Search Languages...",
+      "selectLanguage": "Select Language...",
+      "title": "Language",
+      "ur": "Urdu"
+    },
+    "profile": {
+      "alertException": "Unable to Update",
+      "alertNameUpdated": "Name Updated",
+      "alertNothingToUpdate": "Nothing to update",
+      "editProfile": "Edit profile",
+      "name": "Name",
+      "title": "Profile"
+    },
+    "theme": {
+      "Blue": "Blue",
+      "Green": "Green",
+      "Orange": "Orange",
+      "Rose": "Rose",
+      "Slate": "Slate",
+      "Stone": "Stone",
+      "Violet": "Violet",
+      "alertException": "Unable to Change Theme Now",
+      "alertNoChanges": "Nothing to update",
+      "alertUpdated": "Theme Changed",
+      "editTitle": "Choose Theme",
+      "label": "Theme"
+    },
+    "title": "Settings"
+  }
+}
