@@ -145,7 +145,7 @@ export const DataProvider = ({ children }) => {
 
     return (
         <DataContext.Provider value={values}>
-            {loading ? <Loader /> : children}
+            {children}
         </DataContext.Provider>
     );
 };
