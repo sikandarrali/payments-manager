@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.3.1
+- UI Changes
+
 ### 1.3
 - Change Navbar UI
 

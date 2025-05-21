@@ -35,7 +35,7 @@ const Navbar = () => {
 
 
 	return (
-		<div className="flex flex-col px-4 pt-4 pb-8 w-full" dir={'ltr'}>
+		<div className="flex flex-col px-4 pt-4 pb-12 md:pb-4 w-full" dir={'ltr'}>
 
 			<div className={'flex justify-between items-center gap-4 relative'}>
 
