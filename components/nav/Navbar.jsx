@@ -4,6 +4,7 @@ import {
 	Copyright,
 	LogOut,
 	NotebookPen,
+	Plus,
 	RefreshCw,
 	SettingsIcon,
 	Users
@@ -24,20 +25,48 @@ import { isActivePath } from "@/lib/routes";
 import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
 import { Logo } from "@/components/nav/Logo";
 import { Separator } from "@/components/ui/separator";
+import AddItemDialog from "../items/AddItemDialog";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const isPWAInstalled = usePWAStatus();
 	const { setLoading } = useAuth()
+	const [openAddPaymentDialog, setOpenAddPaymentDialog] = useState(false)
+
 
 	return (
-		<div className="flex flex-col p-6 pt-8" dir={'ltr'}>
+		<div className="flex flex-col px-4 pt-4 pb-8 w-full" dir={'ltr'}>
 
 			<div className={'flex justify-between items-center gap-4 relative'}>
 
-				<div className={'flex items-center gap-8'}>
-					<Logo />
-					<DarkModeToggle />
+				<Logo />
+
+				<div className="absolute left-1/2 -translate-x-1/2 -top-[45px] h-16 flex items-start justify-center">
+
+					{/* <div className="w-14 outline outline-offset-4 bg-background outline-2 outline-primary h-8 rounded-t-full -top-2" /> */}
+
+					{/* <div
+						className="
+						absolute
+						-top-2
+						left-1/2
+						-translate-x-1/2
+						w-[80px]
+						h-[40px]
+						border-2
+						border-primary
+						border-b-0
+						rounded-t-full
+						pointer-events-none
+						"
+					/> */}
+					<Button
+						className="absolute rounded-full w-16 h-16 lg:w-14 lg:h-14"
+						size="icon"
+						onClick={() => setOpenAddPaymentDialog(true)}
+					>
+						<Plus className="w-9 h-9" />
+					</Button>
 				</div>
 
 
@@ -48,7 +77,7 @@ const Navbar = () => {
 							setLoading(true);
 							window.location.reload();
 						}}
-						variant={'outline'}
+						variant={'ghost'}
 						className="rounded-lg group cursor-pointer flex items-center justify-center select-none w-10 h-9 p-1"
 					>
 						<RefreshCw className="w-5 h-5" />
@@ -56,7 +85,7 @@ const Navbar = () => {
 
 					{/* Open Sidebar Button */}
 					<Button
-						variant={'outline'}
+						variant={'ghost'}
 						className={'p-3 rounded-2xl cursor-pointer'}
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 					>
@@ -73,6 +102,9 @@ const Navbar = () => {
 
 			{/* Sidebar */}
 			<Sidebar open={isMenuOpen} onOpenChange={setIsMenuOpen} isPWAInstalled={isPWAInstalled} />
+
+			{/* Add Item */}
+			<AddItemDialog isOpen={openAddPaymentDialog} setisOpen={setOpenAddPaymentDialog} />
 		</div>
 	);
 };
@@ -122,38 +154,21 @@ const Sidebar = ({ open, onOpenChange, isPWAInstalled }) => {
 									<UIText weight={'semibold'} className="pr-8 mt-2" text={user?.name} textOrientation={'left'} />
 									<UIText variant={'sm'} className="pr-8 text-ellipsis overflow-hidden" text={user?.email} textOrientation={'left'} />
 								</div>
+
 							</div>
 
 							<div className="flex flex-col px-6 mt-auto mb-6 lg:mt-10 gap-0.5">
 
-								{/* <MenuItem
-									label={t('links.books')}
-									href={"/books"}
-									isActivePath={isActivePath(pathname, '/books')}
-									icon={
-										<NotebookPen className={cn("w-[18px] h-[18px] rtl:mt-1", isActivePath(pathname, '/books') && "text-muted")} />
-									}
-								/>
+								<div
+									className={cn(
+										"flex items-center justify-between gap-2 rtl:gap-4 px-4 py-4 rounded-md group hover:bg-muted-foreground hover:text-muted cursor-pointer",
+									)}
+								>
+									<span className="font-semibold">Mode</span>
+									<DarkModeToggle />
+								</div>
 
-								<MenuItem
-									label={t('links.diaries')}
-									href={"/diaries"}
-									isActivePath={isActivePath(pathname, '/diaries')}
-									icon={
-										<CircleCheckBig className={cn("w-[18px] h-[18px] rtl:mt-1", isActivePath(pathname, '/diaries') && "text-muted")} />
-									}
-								/>
-
-								<MenuItem
-									label={t('links.groups')}
-									href={"/groups"}
-									isActivePath={isActivePath(pathname, '/groups')}
-									icon={
-										<Users className={cn("w-[18px] h-[18px] rtl:mt-1", isActivePath(pathname, '/groups') && "text-muted")} />
-									}
-								/>
-
-								<Separator /> */}
+								<Separator />
 
 								<MenuItem
 									label={t('links.settings')}

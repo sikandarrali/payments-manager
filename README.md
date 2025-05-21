@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.3
+- Change Navbar UI
+
 ### 1.2.1
 - fix items not loading when logged in
 

@@ -20,9 +20,9 @@ const PageContainer = ({ children, title, hideBackButton, className, headerTextO
 				className
 			)}
 		>
-			{!hideNavbar && <Navbar />}
+			{/* {!hideNavbar && <Navbar />} */}
 			<div className={cn(
-				'p-6 pt-0 pb-20 gap-4 min-h-screen flex flex-col w-full bg-card border border-border shadow-lg relative flex-1 rounded-t-[40px]',
+				'p-6 pt-0 pb-20 gap-4 min-h-screen flex flex-col w-full bg-card border border-border shadow-lg relative flex-1',
 			)}>
 				{/* <div className={cn('mb-4 grid grid-cols-5 w-full relative')} dir={'ltr'}>
 					{!LOCALE_HOME_ROUTE.includes(pathname) && !hideBackButton &&
