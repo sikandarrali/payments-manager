@@ -32,7 +32,14 @@ const DeleteItem = ({ deleteID }) => {
     return (
         <div>
 
-            <Button variant='outline' size='icon' onClick={() => setOpenDelete(true)}><Trash2 className="w-4 h-4" /></Button>
+            <Button
+                variant='outline'
+                size="icon"
+                onClick={() => setOpenDelete(true)}
+                className="w-8 h-8"
+            >
+                <Trash2 className="w-3.5 h-3.5" />
+            </Button>
 
 
             <AlertDialog open={openDelete} onOpenChange={setOpenDelete}>

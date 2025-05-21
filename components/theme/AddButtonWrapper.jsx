@@ -1,7 +1,7 @@
 export const AddButtonWrapper = ({ children }) => {
     return (
-        <div className={'fixed bottom-10 position-center-horizontally max-w-lg z-20 flex items-end justify-end px-6 left-0 w-full'}>
-            {children}
+        <div className={'fixed bottom-14 right-14 max-w-fit z-50'}>
+            <div className="shrink-0">{children}</div>
         </div>
     )
 }

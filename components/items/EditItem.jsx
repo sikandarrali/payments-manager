@@ -73,9 +73,16 @@ const EditItem = ({ item }) => {
 
     return (
         <>
-            <Button variant='outline' size='icon' onClick={() => setIsOpen(true)}>
-                <Edit2 className="w-4 h-4" />
+
+            <Button
+                variant='outline'
+                size="icon"
+                onClick={() => setIsOpen(true)}
+                className="w-8 h-8"
+            >
+                <Edit2 className="w-3.5 h-3.5" />
             </Button>
+
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogContent className="max-w-[90%] md:max-w-[500px] max-h-[90vh] overflow-auto rounded-2xl">
                     <DialogHeader>
