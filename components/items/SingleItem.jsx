@@ -7,6 +7,7 @@ import MarkAsPaid from './MarkAsPaid'
 import { cn } from '@/lib/utils'
 import EditItem from './EditItem'
 import { FormattedDate2 } from '@/lib/FormattedDate2'
+import Image from 'next/image'
 
 const SingleItem = ({ item }) => {
 
@@ -15,17 +16,17 @@ const SingleItem = ({ item }) => {
             key={item.$id}
             className={cn("bg-muted shadow text-muted-background rounded-lg flex flex-col gap-4")}
         >
+
             <div className="flex justify-between items-center gap-10 border-b border-foreground/10 dark:border-background px-4 py-3">
                 <span className="flex gap-2 text-base items-center justify-center">
                     <CalendarIcon className="w-4 h-4" />
                     <span className="font-medium">{FormattedDate2(item.date)}</span>
                 </span>
 
-                {item.type === "payment" &&
-                    <span className={`rounded-full text-xs px-2 py-1 font-medium ${item.isPaid ? 'bg-[#42AB5D] text-white' : 'bg-red-200 text-red-800'}`}>
-                        {item.isPaid ? 'Paid' : 'Unpaid'}
-                    </span>
-                }
+                <div className='flex gap-2'>
+                    <DeleteItem deleteID={item.$id} />
+                    <EditItem item={item} />
+                </div>
             </div>
 
             <div className="flex flex-col gap-3 px-5">
@@ -66,10 +67,19 @@ const SingleItem = ({ item }) => {
                 </div>
             }
 
-            <div className="flex gap-2 p-4 pt-0">
-                <DeleteItem deleteID={item.$id} />
-                <EditItem item={item} />
-                {item.type === "payment" && <MarkAsPaid itemID={item.$id} isPaid={item.isPaid} />}
+            <div className="flex gap-2 p-4 pt-0 relative justify-end">
+                {item.type === "payment" && item.isPaid &&
+                    <div className='absolute left-6'>
+                        <Image
+                            priority
+                            src="/icons/paidIcon.svg"
+                            height={85}
+                            width={85}
+                            alt="Paid"
+                        />
+                    </div>
+                }
+                {item.type === "payment" && <MarkAsPaid item={item} />}
             </div>
 
         </div>
