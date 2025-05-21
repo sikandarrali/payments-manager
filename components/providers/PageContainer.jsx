@@ -53,12 +53,11 @@ const PageContainer = ({ children, hideAddButton, title, hideBackButton, classNa
 				</div> */}
 				{children}
 			</div>
-			<AddButtonWrapper>
-				{/* <Button className="rounded-full w-16 h-16 lg:h-14 lg:w-14" size="icon" onClick={() => setOpenAddPaymentDialog(true)}>
-					<Plus className="w-9 h-9" />
-				</Button> */}
-				<Navbar hideAddButton={hideAddButton} />
-			</AddButtonWrapper>
+			{!hideNavbar &&
+				<AddButtonWrapper>
+					<Navbar hideAddButton={hideAddButton} />
+				</AddButtonWrapper>
+			}
 		</div>
 	);
 };

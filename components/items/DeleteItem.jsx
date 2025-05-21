@@ -15,6 +15,8 @@ import { db } from '../appwrite/database';
 import { toast } from 'react-toastify';
 import { ToastOptions } from '@/lib/ToastOptions';
 import { useI18n } from '@/locales/client';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '../ui/dialog';
+import TypeTabs from './TypeTabs';
 
 
 const DeleteItem = ({ deleteID }) => {
@@ -24,8 +26,14 @@ const DeleteItem = ({ deleteID }) => {
     const t = useI18n()
 
     const onDelete = async () => {
-        await db.items.delete(deleteID);
-        toast.success(t('alerts.deleted'), ToastOptions);
+        try {
+            await db.items.delete(deleteID)
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setOpenDelete(false)
+            toast.success(t('alerts.deleted'), ToastOptions);
+        }
     }
 
 
@@ -41,31 +49,29 @@ const DeleteItem = ({ deleteID }) => {
                 <Trash2 className="w-3.5 h-3.5" />
             </Button>
 
-
-            <AlertDialog open={openDelete} onOpenChange={setOpenDelete}>
-                <AlertDialogContent className={"w-[90%] rounded-xl overflow-auto"}>
-                    <AlertDialogHeader className={'!text-left'}>
-                        <AlertDialogTitle className={'text-primary flex items-center justify-center gap-2 font-normal'}>
+            <Dialog open={openDelete} onOpenChange={setOpenDelete}>
+                <DialogContent className="max-w-[90%] md:max-w-[500px] max-h-[90vh] z-50 overflow-auto rounded-2xl">
+                    <DialogHeader className={"text-left"}>
+                        <DialogTitle className="flex items-center gap-2 text-red-500">
                             <TriangleAlert className={'w-5 h-5'} />
                             <UIText variant={'heading'} text={"Confirm Deletion"} />
-                        </AlertDialogTitle>
-                        <AlertDialogDescription className={"flex flex-col text-base items-center gap-4 !my-5"}>
+                        </DialogTitle>
+                        <DialogDescription className="!mt-3">
                             This will permanently delete this item, are you sure?
-                        </AlertDialogDescription>
-                    </AlertDialogHeader>
-
-                    <AlertDialogFooter className={'!flex-row items-center !justify-between gap-4'} dir={'ltr'}>
-                        <AlertDialogCancel className={'mt-0'} onClick={() => onDelete(deleteID)}>
-                            <UIText variant={'button'} text={'Yes, Delete'} />
-                        </AlertDialogCancel>
-                        <AlertDialogAction onClick={() => setOpenDelete(false)}>
-                            <UIText variant={'button'} text={'Cancel'} />
-                        </AlertDialogAction>
-                    </AlertDialogFooter>
-                </AlertDialogContent>
-            </AlertDialog>
-
-
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogFooter>
+                        <div className="flex gap-4 justify-between">
+                            <Button variant="outline" className={'mt-0'} onClick={() => onDelete(deleteID)}>
+                                Yes, Delete
+                            </Button>
+                            <Button onClick={() => setOpenDelete(false)}>
+                                Cancel
+                            </Button>
+                        </div>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
 
         </div>
     )

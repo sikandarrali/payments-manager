@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.4.1
+- Fix delete dialog issue
+
 ### 1.4.0
 - Add "Still Due" card in summary
 

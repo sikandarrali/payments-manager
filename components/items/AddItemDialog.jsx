@@ -75,7 +75,7 @@ const AddItemDialog = ({ isOpen, setisOpen }) => {
                         <span>Add New</span>
                         <TypeTabs activeTab={activeType} setActiveTab={setActiveType} />
                     </DialogTitle>
-                    <DialogDescription>
+                    <DialogDescription className="!mt-3">
                         Enter the details for the new {activeType}
                     </DialogDescription>
                 </DialogHeader>

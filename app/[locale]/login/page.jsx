@@ -21,7 +21,7 @@ export default function Home() {
 	}
 
 	return (
-		<PageContainer hideBackButton>
+		<PageContainer hideBackButton hideAddButton>
 			<div className="flex flex-col pt-8 w-full flex-1">
 
 				<div className={'flex items-center gap-8 justify-between'}>
