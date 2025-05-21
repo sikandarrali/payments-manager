@@ -21,7 +21,7 @@ const Summary = () => {
                 <CardContent className="w-[200px]">
                     <div className="text-2xl font-bold">€ {sumOfIncomes - sumOfPayments}</div>
                     <div className="mt-2">
-                        <Progress value={40} className="h-2" />
+                        <Progress value={percentage} className="h-2" />
                         <div className="text-xs text-muted-foreground mt-1 flex items-center justify-between gap-2">
                             {/* <span>{GetMonthNameYearFromDateObject(currentMonth)}</span> */}
                             {/* <span className='w-1 h-1 bg-foreground rounded-full'></span> */}
