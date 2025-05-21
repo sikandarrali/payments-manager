@@ -7,8 +7,9 @@ import Navbar from "@/components/nav/Navbar";
 import { usePathname, useRouter } from "next/navigation";
 import { LOCALE_HOME_ROUTE } from "@/lib/routes";
 import { useAuth } from "@/components/contexts/AuthContext";
+import { AddButtonWrapper } from "../theme/AddButtonWrapper";
 
-const PageContainer = ({ children, title, hideBackButton, className, headerTextOrientation, headerClass, hideNavbar }) => {
+const PageContainer = ({ children, hideAddButton, title, hideBackButton, className, headerTextOrientation, headerClass, hideNavbar }) => {
 	const router = useRouter()
 	const pathname = usePathname()
 	const { user } = useAuth()
@@ -22,7 +23,7 @@ const PageContainer = ({ children, title, hideBackButton, className, headerTextO
 		>
 			{/* {!hideNavbar && <Navbar />} */}
 			<div className={cn(
-				'p-6 pt-0 pb-20 gap-4 min-h-screen flex flex-col w-full bg-card border border-t-0 border-b-0 border-border shadow-lg relative flex-1',
+				'p-6 pt-0 pb-40 gap-4 min-h-screen flex flex-col w-full bg-card border border-t-0 border-b-0 border-border shadow-lg relative flex-1',
 			)}>
 				{/* <div className={cn('mb-4 grid grid-cols-5 w-full relative')} dir={'ltr'}>
 					{!LOCALE_HOME_ROUTE.includes(pathname) && !hideBackButton &&
@@ -52,6 +53,12 @@ const PageContainer = ({ children, title, hideBackButton, className, headerTextO
 				</div> */}
 				{children}
 			</div>
+			<AddButtonWrapper>
+				{/* <Button className="rounded-full w-16 h-16 lg:h-14 lg:w-14" size="icon" onClick={() => setOpenAddPaymentDialog(true)}>
+					<Plus className="w-9 h-9" />
+				</Button> */}
+				<Navbar hideAddButton={hideAddButton} />
+			</AddButtonWrapper>
 		</div>
 	);
 };

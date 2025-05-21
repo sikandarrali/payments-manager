@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.3.5
+- Fix navbar visibility on TOS and Privacy Policy pages
+
 ### 1.3.4
 - Fix Sum of Payments and Incomes
 

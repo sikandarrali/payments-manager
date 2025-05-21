@@ -27,7 +27,7 @@ import { Logo } from "@/components/nav/Logo";
 import { Separator } from "@/components/ui/separator";
 import AddItemDialog from "../items/AddItemDialog";
 
-const Navbar = () => {
+const Navbar = ({ hideAddButton }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const isPWAInstalled = usePWAStatus();
 	const { setLoading } = useAuth()
@@ -41,33 +41,36 @@ const Navbar = () => {
 
 				<Logo />
 
-				<div className="absolute left-1/2 z-50 -translate-x-1/2 -top-12 h-16 flex items-start justify-center">
+				{!hideAddButton &&
 
-					{/* <div className="w-14 outline outline-offset-4 bg-background outline-2 outline-primary h-8 rounded-t-full -top-2" /> */}
+					<div className="absolute left-1/2 z-50 -translate-x-1/2 -top-12 h-16 flex items-start justify-center">
 
-					{/* <div
-						className="
-						absolute
-						-top-2
-						left-1/2
-						-translate-x-1/2
-						w-[80px]
-						h-[40px]
-						border-2
-						border-primary
-						border-b-0
-						rounded-t-full
-						pointer-events-none
-						"
-					/> */}
-					<Button
-						className="absolute rounded-full z-50 w-16 h-16 lg:w-14 lg:h-14"
-						size="icon"
-						onClick={() => setOpenAddPaymentDialog(true)}
-					>
-						<Plus className="w-9 h-9" />
-					</Button>
-				</div>
+						{/* <div className="w-14 outline outline-offset-4 bg-background outline-2 outline-primary h-8 rounded-t-full -top-2" /> */}
+
+						{/* <div
+							className="
+							absolute
+							-top-2
+							left-1/2
+							-translate-x-1/2
+							w-[80px]
+							h-[40px]
+							border-2
+							border-primary
+							border-b-0
+							rounded-t-full
+							pointer-events-none
+							"
+						/> */}
+						<Button
+							className="absolute rounded-full z-50 w-16 h-16 lg:w-14 lg:h-14"
+							size="icon"
+							onClick={() => setOpenAddPaymentDialog(true)}
+						>
+							<Plus className="w-9 h-9" />
+						</Button>
+					</div>
+				}
 
 
 				<div className={'flex gap-4 items-center'}>
