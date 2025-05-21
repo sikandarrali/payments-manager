@@ -35,8 +35,8 @@ const SingleItem = ({ item }) => {
             </div>
 
             <div className="flex flex-col gap-3 px-5">
-                <div className="flex pr-16 relative items-center gap-2">
-                    {item.type === "income" ? <ArrowDownIcon className="h-6 w-6 stroke-2.5 text-[#42AB5D]" /> : isPaid ? <CircleCheckBig className="text-[#42AB5D] stroke-2.5" /> : <Circle className="text-red-600 stroke-2.5" />}
+                <div className="flex pr-16 relative items-start gap-2">
+                    {item.type === "income" ? <ArrowDownIcon className="h-6 w-6 stroke-2.5 text-[#42AB5D] mt-0.5" /> : isPaid ? <CircleCheckBig className="text-[#42AB5D] stroke-2.5 mt-0.5" /> : <Circle className="text-red-600 stroke-2.5 mt-0.5" />}
                     <h3 className="text-xl font-semibold">{item.title}</h3>
                 </div>
                 {item.description && <p className="mt-1 text-sm">{item.description}</p>}

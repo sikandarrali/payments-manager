@@ -34,6 +34,7 @@ const MarkAsPaid = ({ item }) => {
         try {
             const tempItems = {
                 paidMonths: tempPaidMonths,
+                isPaid: !isPaid
             };
             await db.items.update(tempItems, item.$id);
             if (item.isPaid) {
