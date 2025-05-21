@@ -4,6 +4,10 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.3.3
+- Fix Amount Type Keyboard
+- Fix Input type Text capitalize
+
 ### 1.3.2
 Fixed following issues:
 -  Add Button clickable issue

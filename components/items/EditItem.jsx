@@ -157,7 +157,9 @@ const EditItem = ({ item }) => {
                                         value={values.amount}
                                         disabled={isSubmitting}
                                         placeholder="0.00"
-                                        type="number"
+                                        type="tel"
+                                        inputMode="numeric"
+                                        pattern="[0-9]*"
                                     />
                                 </div>
 

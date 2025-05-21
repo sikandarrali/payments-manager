@@ -9,6 +9,7 @@ import { redirect } from "next/navigation";
 import { HOMEPAGE_ROUTE } from "@/lib/routes";
 import { Logo } from "@/components/nav/Logo";
 import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
+import { Input } from "@/components/ui/input";
 
 export default function Home() {
 	const { onGoogleWithLogin, user } = useAuth();
