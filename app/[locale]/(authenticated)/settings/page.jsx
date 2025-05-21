@@ -25,7 +25,10 @@ export default function Settings() {
     const { currentTheme } = useApp()
 
     return (
-        <PageContainer title={t('title')}>
+        <PageContainer title={t('title')} hideAddButton>
+
+            <UIText textOrientation={'left'} variant={'heading'} weight={'semibold'} text={'Settings'} className={"mt-6"} />
+
 
             <div className={'flex flex-col divide-y -mx-6 last:border-0'}>
 
@@ -64,7 +67,7 @@ export default function Settings() {
             </div>
 
             <div className={'px-6 py-8 gap-2 text-center mt-10 text-sm text-muted-foreground'}>
-                App Version <span className={'font-semibold'}>1.3.5</span>
+                App Version <span className={'font-semibold'}>1.3.6</span>
             </div>
 
             <EditProfile open={openEditProfile} onOpenChange={setOpenEditProfile} />

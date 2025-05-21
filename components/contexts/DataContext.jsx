@@ -132,7 +132,7 @@ export const DataProvider = ({ children }) => {
         setSumOfPayments(sumOfPayments);
 
         const sumOfIncomes = sorted
-            .filter(item => item.type === "income" && item.paidMonths.includes(paidKey))
+            .filter(item => item.type === "income")
             .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
         setSumOfIncomes(sumOfIncomes);
 
