@@ -11,9 +11,7 @@ const MarkAsPaid = ({ item }) => {
 
     const t = useI18n()
 
-    const { currentMonth } = useData()
-
-    const paidKey = `${String(currentMonth.month).padStart(2, "0")}-${currentMonth.year}`
+    const { paidKey } = useData()
 
     const isPaid = item.paidMonths.includes(paidKey)
 
@@ -36,7 +34,6 @@ const MarkAsPaid = ({ item }) => {
         try {
             const tempItems = {
                 paidMonths: tempPaidMonths,
-                isPaid: !isPaid
             };
             await db.items.update(tempItems, item.$id);
             if (item.isPaid) {
@@ -56,7 +53,7 @@ const MarkAsPaid = ({ item }) => {
             onClick={() => onMarkAsPaid()}
             variant='outline'
         >
-            {item.isPaid ? "Mark as Unpaid" : "Mark as Paid"}
+            {isPaid ? "Mark as Unpaid" : "Mark as Paid"}
         </Button>
     )
 }

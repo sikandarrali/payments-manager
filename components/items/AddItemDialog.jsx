@@ -90,7 +90,6 @@ const AddItemDialog = ({ isOpen, setisOpen }) => {
                         endDate: "",
                         frequency: "",
                         isRecurring: false,
-                        isPaid: false,
                     }}
                     validationSchema={ItemSchema}
                     onSubmit={(values, { setSubmitting }) => {

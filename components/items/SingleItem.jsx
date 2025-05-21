@@ -8,13 +8,18 @@ import { cn } from '@/lib/utils'
 import EditItem from './EditItem'
 import { FormattedDate2 } from '@/lib/FormattedDate2'
 import Image from 'next/image'
+import { useData } from '../contexts/DataContext'
 
 const SingleItem = ({ item }) => {
+
+    const { paidKey } = useData()
+    const isPaid = item.paidMonths.includes(paidKey)
+
 
     return (
         <div
             key={item.$id}
-            className={cn("bg-muted shadow text-muted-background rounded-lg flex flex-col gap-4")}
+            className={cn("bg-muted shadow text-muted-background rounded-lg flex flex-col gap-4", isPaid && "opacity-50")}
         >
 
             <div className="flex justify-between items-center gap-10 border-b border-foreground/10 dark:border-background px-4 py-3">
@@ -31,13 +36,13 @@ const SingleItem = ({ item }) => {
 
             <div className="flex flex-col gap-3 px-5">
                 <div className="flex pr-16 relative items-center gap-2">
-                    {item.type === "income" ? <ArrowDownIcon className="h-6 w-6 stroke-2.5 text-[#42AB5D]" /> : item.isPaid ? <CircleCheckBig className="text-[#42AB5D] stroke-2.5" /> : <Circle className="text-red-600 stroke-2.5" />}
+                    {item.type === "income" ? <ArrowDownIcon className="h-6 w-6 stroke-2.5 text-[#42AB5D]" /> : isPaid ? <CircleCheckBig className="text-[#42AB5D] stroke-2.5" /> : <Circle className="text-red-600 stroke-2.5" />}
                     <h3 className="text-xl font-semibold">{item.title}</h3>
                 </div>
                 {item.description && <p className="mt-1 text-sm">{item.description}</p>}
                 {item.amount &&
                     <div className={cn("text-2xl font-bold ml-auto flex items-center gap-1", item.type === "payment" ? "text-red-600" : "text-[#42AB5D]")}>
-                        <span>{item.type === "income" ? <Plus className='stroke-[4px] w-5' /> : item.isPaid && <Minus className='stroke-[4px] w-5' />}</span>  € {item.amount}
+                        <span>{item.type === "income" ? <Plus className='stroke-[4px] w-5' /> : isPaid && <Minus className='stroke-[4px] w-5' />}</span>  € {item.amount}
                     </div>
                 }
             </div>
@@ -68,7 +73,7 @@ const SingleItem = ({ item }) => {
             }
 
             <div className="flex gap-2 p-4 pt-0 relative justify-end">
-                {item.type === "payment" && item.isPaid &&
+                {item.type === "payment" && isPaid &&
                     <div className='absolute left-6'>
                         <Image
                             priority

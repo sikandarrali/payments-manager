@@ -18,6 +18,9 @@ export const DataProvider = ({ children }) => {
     const [sumOfPayments, setSumOfPayments] = useState(0)
     const [sumOfIncomes, setSumOfIncomes] = useState(0)
 
+    const paidKey = `${String(currentMonth.month).padStart(2, "0")}-${currentMonth.year}`
+
+
     useEffect(() => {
         setCurrentMonth({
             month: today.getMonth() + 1,
@@ -145,7 +148,8 @@ export const DataProvider = ({ children }) => {
         currentMonth,
         setCurrentMonth,
         sumOfIncomes,
-        sumOfPayments
+        sumOfPayments,
+        paidKey
     };
 
     return (

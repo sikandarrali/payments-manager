@@ -44,7 +44,7 @@ export default function Page() {
 					/>
 				</div> */}
 
-			<div className=" gap-6 flex flex-col">
+			<div className="gap-6 flex flex-col pb-20">
 				{items.length > 0 ?
 					items.map((item) => (
 						<SingleItem item={item} key={item.$id} />
