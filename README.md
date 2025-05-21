@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.2.1
+- fix items not loading when logged in
+
 ### 1.2
 - Fix app icons 
 - Fix summary percentage bar
