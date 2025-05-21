@@ -5,8 +5,10 @@ import UIText from "@/components/theme/UIText";
 export default function Home() {
 
     return (
-        <PageContainer title={'Privacy Policy'} headerTextOrientation={'left'} headerClass={'pt-0 rtl:mt-0 !text-left rtl:pt-0'}>
-            <div className="flex flex-col pt-6 pb-20 w-full flex-1 gap-8" dir={'ltr'}>
+        <PageContainer hideAddButton>
+            <div className="flex flex-col pt-6 w-full flex-1 gap-8" dir={'ltr'}>
+
+                <UIText textOrientation={'left'} variant={'heading'} weight={'semibold'} text={'Privacy Policy'} />
 
                 <div className={'flex flex-col gap-1'}>
                     <UIText textOrientation={'left'} variant={'lg'} weight={'semibold'} text={'Introduction'} />
@@ -86,7 +88,7 @@ export default function Home() {
                 <div className={'flex flex-col gap-4'}>
                     <UIText textOrientation={'left'} variant={'lg'} weight={'semibold'} text={'Contact Us'} />
                     <UIText textOrientation={'left'} text={'If you have any questions about this Privacy Policy, please contact us at '} />
-                    <UIText textOrientation={'left'} className={'text-primary'} weight={'medium'} text={'aasaanapps.store@gmail.com'} />
+                    <UIText textOrientation={'left'} weight={'semibold'} text={'aasaanapps.store@gmail.com'} />
                 </div>
 
 

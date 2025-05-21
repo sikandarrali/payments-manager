@@ -44,7 +44,7 @@ export default function Page() {
 					/>
 				</div> */}
 
-			<div className="gap-6 flex flex-col pb-20">
+			<div className="gap-6 flex flex-col">
 				{items.length > 0 ?
 					items.map((item) => (
 						<SingleItem item={item} key={item.$id} />
@@ -54,16 +54,6 @@ export default function Page() {
 				}
 			</div>
 
-			{/* </div> */}
-
-			<AddButtonWrapper>
-				{/* <Button className="rounded-full w-16 h-16 lg:h-14 lg:w-14" size="icon" onClick={() => setOpenAddPaymentDialog(true)}>
-					<Plus className="w-9 h-9" />
-				</Button> */}
-				<Navbar />
-			</AddButtonWrapper>
-
-			{/* <AddItemDialog isOpen={openAddPaymentDialog} setisOpen={setOpenAddPaymentDialog} /> */}
 		</PageContainer >
 	);
 }
