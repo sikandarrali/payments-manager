@@ -4,6 +4,8 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.4.0
+- Add "Still Due" card in summary
 
 ### 1.3.6
 - Fix navbar visibility on settings page
@@ -31,19 +33,19 @@ Fixed following issues:
 ### 1.3.1
 - UI Changes
 
-### 1.3
+### 1.3.0
 - Change Navbar UI
 
 ### 1.2.1
 - fix items not loading when logged in
 
-### 1.2
+### 1.2.0
 - Fix app icons 
 - Fix summary percentage bar
 
-### 1.1
+### 1.1.0
 - Fix Items not tracking for each month separately
 - Change Sinlge Item UI
 
-### 1.0
-- Version 1.0 release
+### 1.0.0
+- Version 1.0.0 release

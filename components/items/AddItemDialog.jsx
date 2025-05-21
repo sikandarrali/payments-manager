@@ -69,7 +69,7 @@ const AddItemDialog = ({ isOpen, setisOpen }) => {
 
     return (
         <Dialog open={isOpen} onOpenChange={setisOpen}>
-            <DialogContent className="max-w-[90%] md:max-w-[500px] max-h-[90vh] overflow-auto rounded-2xl">
+            <DialogContent className="max-w-[90%] md:max-w-[500px] max-h-[90vh] z-50 overflow-auto rounded-2xl">
                 <DialogHeader className={"text-left"}>
                     <DialogTitle className="flex items-center gap-2">
                         <span>Add New</span>
