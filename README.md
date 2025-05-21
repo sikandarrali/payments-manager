@@ -4,6 +4,15 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.3.2
+Fixed following issues:
+-  Add Button clickable issue
+- Opacity of items marked as Paid
+- Bottom padding for list container
+- Plus button not aligned with border
+- Mark as Paid is buggy, stops working sometimes and then works by pressing twice
+- Items being marked for all monhts
+
 ### 1.3.1
 - UI Changes
 

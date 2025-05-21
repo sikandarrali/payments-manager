@@ -41,7 +41,7 @@ const Navbar = () => {
 
 				<Logo />
 
-				<div className="absolute left-1/2 -translate-x-1/2 -top-[45px] h-16 flex items-start justify-center">
+				<div className="absolute left-1/2 z-50 -translate-x-1/2 -top-12 h-16 flex items-start justify-center">
 
 					{/* <div className="w-14 outline outline-offset-4 bg-background outline-2 outline-primary h-8 rounded-t-full -top-2" /> */}
 
@@ -61,7 +61,7 @@ const Navbar = () => {
 						"
 					/> */}
 					<Button
-						className="absolute rounded-full w-16 h-16 lg:w-14 lg:h-14"
+						className="absolute rounded-full z-50 w-16 h-16 lg:w-14 lg:h-14"
 						size="icon"
 						onClick={() => setOpenAddPaymentDialog(true)}
 					>
