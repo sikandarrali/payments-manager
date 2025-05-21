@@ -86,7 +86,11 @@ export default async function RootLayout({ children, params }) {
 		>
 			<head>
 				<title>Payments Manager</title>
-				<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+				{/* <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" /> */}
+
+				<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" media="(prefers-color-scheme: light)" />
+				<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-dark.png" media="(prefers-color-scheme: dark)" />
+
 				<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
 				<meta name="theme-color" content="#0B0A0A" id="theme-color" />
