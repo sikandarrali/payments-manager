@@ -127,12 +127,12 @@ export const DataProvider = ({ children }) => {
 
         // 4) Recompute sums
         const sumOfPayments = sorted
-            .filter(item => item.type === "payment" && item.isPaid)
+            .filter(item => item.type === "payment" && item.isPaid && item.paidMonths.includes(paidKey))
             .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
         setSumOfPayments(sumOfPayments);
 
         const sumOfIncomes = sorted
-            .filter(item => item.type === "income")
+            .filter(item => item.type === "income" && item.paidMonths.includes(paidKey))
             .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
         setSumOfIncomes(sumOfIncomes);
 

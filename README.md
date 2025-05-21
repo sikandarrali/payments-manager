@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.3.4
+- Fix Sum of Payments and Incomes
+
 ### 1.3.3
 - Fix Amount Type Keyboard
 - Fix Input type Text capitalize
