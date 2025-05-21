@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.4.2
+- Fix logo padding
+
 ### 1.4.1
 - Fix delete dialog issue
 
