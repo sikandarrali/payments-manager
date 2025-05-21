@@ -7,6 +7,8 @@ import UIText from "@/components/theme/UIText";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { HOMEPAGE_ROUTE } from "@/lib/routes";
+import { Logo } from "@/components/nav/Logo";
+import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
 
 export default function Home() {
 	const { onGoogleWithLogin, user } = useAuth();
@@ -20,6 +22,11 @@ export default function Home() {
 	return (
 		<PageContainer hideBackButton>
 			<div className="flex flex-col pt-8 w-full flex-1">
+
+				<div className={'flex items-center gap-8 justify-between'}>
+					<Logo />
+					<DarkModeToggle />
+				</div>
 
 				<Button
 					onClick={() => onGoogleWithLogin()}

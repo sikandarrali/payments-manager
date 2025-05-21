@@ -55,7 +55,7 @@ export default function MonthSwitcher({ onChange }) {
     };
 
     return (
-        <div className="flex rounded-t-[40px] justify-between items-center space-x-2 sticky top-0 bg-background p-6 -mx-6 z-50">
+        <div className="flex justify-between items-center space-x-2 sticky top-0 bg-background p-6 -mx-6 z-50">
             <Button variant="outline" size="icon" onClick={prev}>
                 <ChevronLeft />
             </Button>
