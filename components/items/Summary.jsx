@@ -1,13 +1,13 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
-import { ArrowDownIcon, ArrowUpIcon, WalletIcon } from 'lucide-react'
+import { ArrowDownIcon, ArrowUpIcon, Banknote, WalletIcon } from 'lucide-react'
 import { Progress } from '../ui/progress'
 import { useData } from '../contexts/DataContext'
 import { GetMonthNameYearFromDateObject } from '@/lib/GetMonthNameYearFromDateObject'
 
 const Summary = () => {
 
-    const { currentMonth, sumOfIncomes, sumOfPayments } = useData()
+    const { currentMonth, sumOfIncomes, sumOfPayments, sumOfStillDue } = useData()
 
     const percentage = sumOfIncomes > 0 ? (sumOfPayments / sumOfIncomes) * 100 : 0
 
@@ -15,10 +15,10 @@ const Summary = () => {
         <div className="flex flex-row overflow-x-auto gap-4 pb-2 -mt-4">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Balance</CardTitle>
+                    <CardTitle className="text-sm font-medium text-blue-500">Balance</CardTitle>
                     <WalletIcon className="h-4 w-4 text-blue-500" />
                 </CardHeader>
-                <CardContent className="w-[200px]">
+                <CardContent className="w-[160px]">
                     <div className="text-2xl font-bold">€ {sumOfIncomes - sumOfPayments}</div>
                     <div className="mt-2">
                         <Progress value={percentage} className="h-2" />
@@ -32,20 +32,30 @@ const Summary = () => {
             </Card>
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Spent</CardTitle>
-                    <ArrowUpIcon className="h-4 w-4 text-red-500" />
+                    <CardTitle className="text-sm font-medium text-orange-500">Still Due</CardTitle>
+                    <ArrowUpIcon className="h-4 w-4 text-orange-500" />
                 </CardHeader>
-                <CardContent className="w-[200px]">
+                <CardContent className="w-[160px]">
+                    <div className="text-2xl font-bold">€ {sumOfStillDue}</div>
+                    <p className="text-xs text-muted-foreground">{GetMonthNameYearFromDateObject(currentMonth)}</p>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <CardTitle className="text-sm font-medium text-red-500">Spent</CardTitle>
+                    <Banknote className="h-4 w-4 text-red-500" />
+                </CardHeader>
+                <CardContent className="w-[160px]">
                     <div className="text-2xl font-bold">€ {sumOfPayments}</div>
                     <p className="text-xs text-muted-foreground">{GetMonthNameYearFromDateObject(currentMonth)}</p>
                 </CardContent>
             </Card>
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Income</CardTitle>
+                    <CardTitle className="text-sm font-medium text-green-500">Income</CardTitle>
                     <ArrowDownIcon className="h-4 w-4 text-green-500" />
                 </CardHeader>
-                <CardContent className="w-[200px]">
+                <CardContent className="w-[160px]">
                     <div className="text-2xl font-bold">€ {sumOfIncomes}</div>
                     <p className="text-xs text-muted-foreground">{GetMonthNameYearFromDateObject(currentMonth)}</p>
                 </CardContent>
