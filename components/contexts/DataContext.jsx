@@ -42,7 +42,7 @@ export const DataProvider = ({ children }) => {
                 setLoading(false)
             }
         }
-        return () => getItems()
+        getItems()
     }, [])
 
 
@@ -105,13 +105,17 @@ export const DataProvider = ({ children }) => {
             return startY === year && startM === month;
         });
 
-        // 2) Sort: unpaid first, then paid; within each group newest→oldest
+        // 2) Sort: payments first, then incomes; within each group unpaid→paid, newest→oldest
         const sorted = filtered.sort((a, b) => {
-            // a) unpaid before paid
+            // a) always put income at the bottom
+            if (a.type !== b.type) {
+                return a.type === 'income' ? 1 : -1;
+            }
+            // b) unpaid before paid
             if (a.isPaid !== b.isPaid) {
                 return a.isPaid ? 1 : -1;
             }
-            // b) same paid-status → compare dates descending
+            // c) newest first
             return new Date(b.date) - new Date(a.date);
         });
 
@@ -130,6 +134,7 @@ export const DataProvider = ({ children }) => {
         setSumOfIncomes(sumOfIncomes);
 
     }, [currentMonth, defaultItems]);
+
 
 
 
