@@ -40,7 +40,7 @@ const EditItem = ({ item }) => {
     const [isOpen, setIsOpen] = useState(false)
 
 
-    const [toggleDescription, settoggleDescription] = useState(false)
+    const [toggleDescription, settoggleDescription] = useState(item.description ? true : false)
     const [toggleNoEndDate, setToggleNoEndDate] = useState(false)
 
     const [openDate, setOpenDate] = useState("")
