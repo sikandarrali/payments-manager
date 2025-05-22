@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.5.0
+- replaced delete dialog with Drawer
+
 ### 1.4.3
 - Fix: Editing item with descriptions didn't show the description
 
