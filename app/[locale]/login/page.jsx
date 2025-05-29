@@ -10,10 +10,18 @@ import { HOMEPAGE_ROUTE } from "@/lib/routes";
 import { Logo } from "@/components/nav/Logo";
 import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
 import { Input } from "@/components/ui/input";
+import FormLabel from "@/components/theme/FormLabel";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { CalendarIcon } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import { useState } from "react";
+import { FormattedDateForCalenderDatePick } from "@/lib/FormattedDateForCalendarPick";
 
 export default function Home() {
 	const { onGoogleWithLogin, user } = useAuth();
 	const t = useScopedI18n('login')
+	const [openDate, setOpenDate] = useState("")
+	const [date, setDate] = useState(new Date())
 
 	if (user) {
 		redirect(HOMEPAGE_ROUTE)
@@ -21,12 +29,38 @@ export default function Home() {
 	}
 
 	return (
-		<PageContainer hideBackButton hideAddButton>
+		<PageContainer hideBackButton hideAddButton hideNavbar>
 			<div className="flex flex-col pt-8 w-full flex-1">
 
 				<div className={'flex items-center gap-8 justify-between'}>
 					<Logo />
 					<DarkModeToggle />
+				</div>
+
+
+				<div className="flex flex-col gap-2">
+
+					<Popover open={openDate} onOpenChange={setOpenDate}>
+						<PopoverTrigger asChild>
+							<Button
+								variant="outline"
+								className="justify-start text-left font-normal"
+							>
+								<CalendarIcon className="mr-2 h-4 w-4" />
+								{date ? FormattedDateForCalenderDatePick(date) : "Select a date"}
+							</Button>
+						</PopoverTrigger>
+						<PopoverContent className="w-auto p-0">
+							<Calendar
+								mode="single"
+								selected={date}
+								onSelect={(date) => {
+									setDate(date)
+									setOpenDate(false)
+								}}
+							/>
+						</PopoverContent>
+					</Popover>
 				</div>
 
 				<Button
