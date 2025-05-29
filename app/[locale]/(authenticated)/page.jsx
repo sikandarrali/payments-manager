@@ -12,6 +12,7 @@ import { AddButtonWrapper } from "@/components/theme/AddButtonWrapper";
 import { Button } from "@/components/ui/button";
 import AddItemDialog from "@/components/items/AddItemDialog";
 import Navbar from "@/components/nav/Navbar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Page() {
 	const scrollRef = useRef(null);
@@ -53,6 +54,7 @@ export default function Page() {
 					<div className="text-center italic text-muted-foreground mt-4">No Items Found for this month</div>
 				}
 			</div>
+			<ScrollToTopButton />
 
 		</PageContainer >
 	);

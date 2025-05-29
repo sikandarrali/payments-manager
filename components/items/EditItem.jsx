@@ -178,7 +178,7 @@ const EditItem = ({ item }) => {
                                                 {values.date ? FormattedDate2(values.date) : "Select a date"}
                                             </Button>
                                         </PopoverTrigger>
-                                        <PopoverContent className="w-auto p-0">
+                                        <PopoverContent className="w-auto p-0" side="top">
                                             <Calendar
                                                 mode="single"
                                                 selected={values.date}
@@ -224,7 +224,7 @@ const EditItem = ({ item }) => {
                                                                 {values.endDate ? FormattedDate2(values.endDate) : "Select a date"}
                                                             </Button>
                                                         </PopoverTrigger>
-                                                        <PopoverContent className="w-auto p-0">
+                                                        <PopoverContent className="w-auto p-0" side="top">
                                                             <Calendar
                                                                 mode="single"
                                                                 selected={values.endDate}

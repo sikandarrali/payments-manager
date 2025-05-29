@@ -7,7 +7,7 @@ import { GetMonthNameYearFromDateObject } from '@/lib/GetMonthNameYearFromDateOb
 
 const Summary = () => {
 
-    const { currentMonth, sumOfIncomes, sumOfPayments, sumOfStillDue } = useData()
+    const { currentMonth, sumOfIncomes, sumOfPayments, sumOfStillDue, sumOfTotalExpense } = useData()
 
     const percentage = sumOfIncomes > 0 ? (sumOfPayments / sumOfIncomes) * 100 : 0
 
@@ -20,14 +20,16 @@ const Summary = () => {
                 </CardHeader>
                 <CardContent className="w-[160px]">
                     <div className="text-2xl font-bold">€ {sumOfIncomes - sumOfPayments}</div>
-                    <div className="mt-2">
-                        <Progress value={percentage} className="h-2" />
-                        <div className="text-xs text-muted-foreground mt-1 flex items-center justify-between gap-2">
-                            {/* <span>{GetMonthNameYearFromDateObject(currentMonth)}</span> */}
-                            {/* <span className='w-1 h-1 bg-foreground rounded-full'></span> */}
-                            {percentage > 0 && <span className='font-medium'>{percentage.toFixed(2)}% spent </span>}
+                    {percentage > 0 &&
+                        <div className="mt-2">
+                            <Progress value={percentage} className="h-2" />
+                            <div className="text-xs text-muted-foreground mt-1 flex items-center justify-between gap-2">
+                                {/* <span>{GetMonthNameYearFromDateObject(currentMonth)}</span> */}
+                                {/* <span className='w-1 h-1 bg-foreground rounded-full'></span> */}
+                                {percentage > 0 && <span className='font-medium'>{percentage.toFixed(2)}% spent </span>}
+                            </div>
                         </div>
-                    </div>
+                    }
                 </CardContent>
             </Card>
             <Card>
@@ -42,11 +44,11 @@ const Summary = () => {
             </Card>
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium text-red-500">Spent</CardTitle>
+                    <CardTitle className="text-sm font-medium text-red-500">Expense</CardTitle>
                     <Banknote className="h-4 w-4 text-red-500" />
                 </CardHeader>
                 <CardContent className="w-[160px]">
-                    <div className="text-2xl font-bold">€ {sumOfPayments}</div>
+                    <div className="text-2xl font-bold">€ {sumOfTotalExpense}</div>
                     <p className="text-xs text-muted-foreground">{GetMonthNameYearFromDateObject(currentMonth)}</p>
                 </CardContent>
             </Card>
