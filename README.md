@@ -4,6 +4,11 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.6.0
+- Add back to top button
+- update summary
+- fixed date picker
+
 ### 1.5.0
 - replaced delete dialog with Drawer
 

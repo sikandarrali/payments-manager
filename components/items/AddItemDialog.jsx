@@ -170,7 +170,7 @@ const AddItemDialog = ({ isOpen, setisOpen }) => {
                                             {values.date ? FormattedDateForCalenderDatePick(values.date) : "Select a date"}
                                         </Button>
                                     </PopoverTrigger>
-                                    <PopoverContent className="w-auto p-0">
+                                    <PopoverContent className="w-auto p-0" side="top">
                                         <Calendar
                                             mode="single"
                                             selected={values.date}
@@ -215,7 +215,7 @@ const AddItemDialog = ({ isOpen, setisOpen }) => {
                                                             {values.endDate ? FormattedDateForCalenderDatePick(values.endDate) : "Select a date"}
                                                         </Button>
                                                     </PopoverTrigger>
-                                                    <PopoverContent className="w-auto p-0">
+                                                    <PopoverContent className="w-auto p-0" side="top">
                                                         <Calendar
                                                             mode="single"
                                                             selected={values.endDate}

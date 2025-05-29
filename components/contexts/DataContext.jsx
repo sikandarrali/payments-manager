@@ -16,6 +16,7 @@ export const DataProvider = ({ children }) => {
     const today = new Date();
     const [currentMonth, setCurrentMonth] = useState({});
     const [sumOfPayments, setSumOfPayments] = useState(0)
+    const [sumOfTotalExpense, setSumOfTotalExpense] = useState(0)
     const [sumOfStillDue, setSumOfStillDue] = useState(0)
     const [sumOfIncomes, setSumOfIncomes] = useState(0)
 
@@ -142,6 +143,12 @@ export const DataProvider = ({ children }) => {
             .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
         setSumOfStillDue(sumOfStillDue);
 
+        const sumOfTotalExp = sorted
+            .filter(item => item.type === "payment")
+            .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
+        setSumOfTotalExpense(sumOfTotalExp);
+
+
     }, [currentMonth, defaultItems]);
 
 
@@ -156,6 +163,7 @@ export const DataProvider = ({ children }) => {
         sumOfIncomes,
         sumOfStillDue,
         sumOfPayments,
+        sumOfTotalExpense,
         paidKey
     };
 
