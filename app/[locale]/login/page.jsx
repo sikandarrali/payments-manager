@@ -10,21 +10,10 @@ import { HOMEPAGE_ROUTE } from "@/lib/routes";
 import { Logo } from "@/components/nav/Logo";
 import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
 import { Input } from "@/components/ui/input";
-import FormLabel from "@/components/theme/FormLabel";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon } from "lucide-react";
-import { Calendar } from "@/components/ui/calendar";
-import { useState } from "react";
-import { FormattedDateForCalenderDatePick } from "@/lib/FormattedDateForCalendarPick";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import TypeTabs from "@/components/items/TypeTabs";
 
 export default function Home() {
 	const { onGoogleWithLogin, user } = useAuth();
 	const t = useScopedI18n('login')
-	const [openDate, setOpenDate] = useState("")
-	const [date, setDate] = useState(new Date())
-	const [isOpen, setisOpen] = useState(false)
 
 	if (user) {
 		redirect(HOMEPAGE_ROUTE)
@@ -32,50 +21,12 @@ export default function Home() {
 	}
 
 	return (
-		<PageContainer hideBackButton hideAddButton hideNavbar>
+		<PageContainer hideBackButton hideAddButton>
 			<div className="flex flex-col pt-8 w-full flex-1">
 
 				<div className={'flex items-center gap-8 justify-between'}>
 					<Logo />
 					<DarkModeToggle />
-				</div>
-
-
-				<div className="flex flex-col gap-2">
-					<Dialog open={isOpen} onOpenChange={setisOpen}>
-						<DialogContent className="max-w-[90%] md:max-w-[500px] max-h-[90vh] z-50 overflow-auto rounded-2xl">
-							<DialogHeader className={"text-left"}>
-								<DialogTitle className="flex items-center gap-2">
-									<span>Add New</span>
-									{/* <TypeTabs activeTab={activeType} setActiveTab={setActiveType} /> */}
-								</DialogTitle>
-								<DialogDescription className="!mt-3">
-									Enter the details for the new
-								</DialogDescription>
-							</DialogHeader>
-							<Popover open={openDate} onOpenChange={setOpenDate}>
-								<PopoverTrigger asChild>
-									<Button
-										variant="outline"
-										className="justify-start text-left font-normal"
-									>
-										<CalendarIcon className="mr-2 h-4 w-4" />
-										{date ? FormattedDateForCalenderDatePick(date) : "Select a date"}
-									</Button>
-								</PopoverTrigger>
-								<PopoverContent className="w-auto p-0">
-									<Calendar
-										mode="single"
-										selected={date}
-										onSelect={(date) => {
-											setDate(date)
-											setOpenDate(false)
-										}}
-									/>
-								</PopoverContent>
-							</Popover>
-						</DialogContent>
-					</Dialog>
 				</div>
 
 				<Button

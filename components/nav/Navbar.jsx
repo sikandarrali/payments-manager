@@ -226,6 +226,9 @@ const Sidebar = ({ open, onOpenChange, isPWAInstalled }) => {
 							Terms of Service
 						</Link>
 					</div>
+					<div className={'px-6 gap-2 text-center text-sm text-muted-foreground'}>
+						App Version <span className={'font-semibold'}>1.7.0</span>
+					</div>
 				</div>
 
 			</SheetContent>

@@ -66,9 +66,9 @@ export default function Settings() {
 
             </div>
 
-            <div className={'px-6 py-8 gap-2 text-center mt-10 text-sm text-muted-foreground'}>
+            {/* <div className={'px-6 py-8 gap-2 text-center mt-10 text-sm text-muted-foreground'}>
                 App Version <span className={'font-semibold'}>1.6.0</span>
-            </div>
+            </div> */}
 
             <EditProfile open={openEditProfile} onOpenChange={setOpenEditProfile} />
             {/* <EditLanguage open={openEditLanguage} onOpenChange={setOpenEditLanguage} /> */}
