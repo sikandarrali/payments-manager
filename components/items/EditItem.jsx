@@ -32,6 +32,7 @@ import { toast } from "react-toastify"
 import { ToastOptions } from "@/lib/ToastOptions"
 import { useI18n } from "@/locales/client"
 import { FormattedDate2 } from "@/lib/FormattedDate2"
+import { UISheet } from "../theme/UISheet"
 
 const EditItem = ({ item }) => {
 
@@ -83,263 +84,262 @@ const EditItem = ({ item }) => {
                 <Edit2 className="w-3.5 h-3.5" />
             </Button>
 
-            <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="max-w-[90%] md:max-w-[500px] max-h-[90vh] overflow-auto rounded-2xl">
-                    <DialogHeader>
-                        <DialogTitle>Edit {item.type === "payment" ? "Payment" : "Income"}</DialogTitle>
-                        <DialogDescription>
-                            Update the {item.type === "payment" ? "Payment" : "Income"} details.
-                        </DialogDescription>
-                    </DialogHeader>
 
 
-                    <Formik
-                        initialValues={{
-                            title: item.title,
-                            description: item.description,
-                            amount: item.amount,
-                            date: item.date,
-                            endDate: item.endDate,
-                            frequency: item.frequency,
-                            isRecurring: item.isRecurring,
-                        }}
-                        validationSchema={ItemSchema}
-                        onSubmit={(values, { setSubmitting }) => {
-                            onEdit(values, setSubmitting)
-                        }}
-                    >
-                        {({
-                            errors,
-                            touched,
-                            handleChange,
-                            handleBlur,
-                            setFieldValue,
-                            values,
-                            isSubmitting
-                        }) => (
-                            <Form className="flex flex-col w-full space-y-4">
+            <UISheet
+                open={isOpen}
+                onOpenChange={setIsOpen}
+            >
+                <div className="flex flex-col mb-10 gap-1">
+                    <span className="font-medium text-lg">Edit {item.type === "payment" ? "Payment" : "Income"}</span>
+                    {/* <span className="text-muted-foreground">Update the {item.type === "payment" ? "Payment" : "Income"} details.</span> */}
+                </div>
 
-                                {/* Title */}
-                                <div className={"flex w-full flex-col"}>
-                                    <FormLabel
-                                        title={'Title'}
-                                        errors={errors.title}
-                                        touched={touched.title}
-                                    />
-                                    <Input
-                                        label={'Title'}
-                                        errors={errors.title}
-                                        touched={touched.title}
-                                        onChange={e => setFieldValue("title", e.target.value)}
-                                        onBlur={handleBlur}
-                                        name="title"
-                                        value={values.title}
-                                        disabled={isSubmitting}
-                                        placeholder="Rent, Utilities, etc."
-                                    />
-                                </div>
+                <Formik
+                    initialValues={{
+                        title: item.title,
+                        description: item.description,
+                        amount: item.amount,
+                        date: item.date,
+                        endDate: item.endDate,
+                        frequency: item.frequency,
+                        isRecurring: item.isRecurring,
+                    }}
+                    validationSchema={ItemSchema}
+                    onSubmit={(values, { setSubmitting }) => {
+                        onEdit(values, setSubmitting)
+                    }}
+                >
+                    {({
+                        errors,
+                        touched,
+                        handleChange,
+                        handleBlur,
+                        setFieldValue,
+                        values,
+                        isSubmitting
+                    }) => (
+                        <Form className="flex flex-col w-full space-y-4">
 
-
-                                {/* Amount */}
-                                <div className={"flex w-full flex-col"}>
-                                    <FormLabel
-                                        title={'Amount'}
-                                        errors={errors.amount}
-                                        touched={touched.amount}
-                                    />
-                                    <Input
-                                        label={'Amount'}
-                                        errors={errors.amount}
-                                        touched={touched.amount}
-                                        onChange={e => setFieldValue("amount", e.target.value)}
-                                        onBlur={handleBlur}
-                                        name="amount"
-                                        value={values.amount}
-                                        disabled={isSubmitting}
-                                        placeholder="0.00"
-                                        type="tel"
-                                        inputMode="numeric"
-                                        pattern="[0-9]*"
-                                    />
-                                </div>
-
-                                <div className="flex flex-col gap-2">
-                                    <Label>
-                                        {values.isRecurring ? "Start Date" : "Date"}
-                                    </Label>
-                                    <Popover open={openDate} onOpenChange={setOpenDate}>
-                                        <PopoverTrigger asChild>
-                                            <Button
-                                                variant="outline"
-                                                className="justify-start text-left font-normal"
-                                                disabled={isSubmitting}
-                                            >
-                                                <CalendarIcon className="mr-2 h-4 w-4" />
-                                                {values.date ? FormattedDate2(values.date) : "Select a date"}
-                                            </Button>
-                                        </PopoverTrigger>
-                                        <PopoverContent className="w-auto p-0" side="top">
-                                            <Calendar
-                                                mode="single"
-                                                selected={values.date}
-                                                onSelect={(date) => {
-                                                    setFieldValue("date", date)
-                                                    setOpenDate(false)
-                                                }}
-                                                disabled={isSubmitting}
-                                            />
-                                        </PopoverContent>
-                                    </Popover>
-                                </div>
+                            {/* Title */}
+                            <div className={"flex w-full flex-col"}>
+                                <FormLabel
+                                    title={'Title'}
+                                    errors={errors.title}
+                                    touched={touched.title}
+                                />
+                                <Input
+                                    label={'Title'}
+                                    errors={errors.title}
+                                    touched={touched.title}
+                                    onChange={e => setFieldValue("title", e.target.value)}
+                                    onBlur={handleBlur}
+                                    name="title"
+                                    value={values.title}
+                                    disabled={isSubmitting}
+                                    placeholder="Rent, Utilities, etc."
+                                />
+                            </div>
 
 
-                                {/* Recurring */}
-                                <div className={cn("flex justify-between items-center gap-2")}>
-                                    <Label htmlFor="recurring">Recurring</Label>
-                                    <Switch
-                                        id="recurring"
-                                        checked={values.isRecurring}
-                                        onCheckedChange={(checked) => setFieldValue("isRecurring", checked)}
-                                        disabled={isSubmitting}
-                                    />
+                            {/* Amount */}
+                            <div className={"flex w-full flex-col"}>
+                                <FormLabel
+                                    title={'Amount'}
+                                    errors={errors.amount}
+                                    touched={touched.amount}
+                                />
+                                <Input
+                                    label={'Amount'}
+                                    errors={errors.amount}
+                                    touched={touched.amount}
+                                    onChange={e => setFieldValue("amount", e.target.value)}
+                                    onBlur={handleBlur}
+                                    name="amount"
+                                    value={values.amount}
+                                    disabled={isSubmitting}
+                                    placeholder="0.00"
+                                    type="tel"
+                                    inputMode="numeric"
+                                    pattern="[0-9]*"
+                                />
+                            </div>
 
-                                </div>
-
-                                {values.isRecurring &&
-
-                                    <div className={"flex flex-col"}>
-
-                                        <div className="flex flex-col gap-2">
-                                            {!toggleNoEndDate &&
-                                                <>
-                                                    <Label>End Date</Label>
-                                                    <Popover open={openEndDate} onOpenChange={setOpenEndDate}>
-                                                        <PopoverTrigger asChild>
-                                                            <Button
-                                                                variant="outline"
-                                                                className="justify-start text-left font-normal"
-                                                                disabled={isSubmitting}
-                                                            >
-                                                                <CalendarIcon className="mr-2 h-4 w-4" />
-                                                                {values.endDate ? FormattedDate2(values.endDate) : "Select a date"}
-                                                            </Button>
-                                                        </PopoverTrigger>
-                                                        <PopoverContent className="w-auto p-0" side="top">
-                                                            <Calendar
-                                                                mode="single"
-                                                                selected={values.endDate}
-                                                                onSelect={(date) => {
-                                                                    setFieldValue("endDate", date)
-                                                                    setOpenEndDate(false)
-                                                                }}
-                                                                disabled={isSubmitting}
-                                                            />
-                                                        </PopoverContent>
-                                                    </Popover>
-                                                </>
-                                            }
-
-                                            <div className="flex items-center justify-between mt-2 ml-auto">
-                                                <div className="flex items-center space-x-2">
-                                                    <Checkbox
-                                                        id="no-end-date"
-                                                        checked={toggleNoEndDate}
-                                                        onCheckedChange={(checked) => {
-                                                            if (checked) {
-                                                                setFieldValue("endDate", "")
-                                                            }
-                                                            setToggleNoEndDate(!toggleNoEndDate)
-                                                        }}
-                                                        disabled={isSubmitting}
-                                                    />
-                                                    <Label htmlFor="no-end-date" className="text-sm">
-                                                        No end date
-                                                    </Label>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div className="grid gap-2">
-                                            <Label htmlFor="frequency">Frequency</Label>
-                                            <Select
-                                                value={values.frequency}
-                                                onValueChange={(value) =>
-                                                    setFieldValue("frequency", value)
-                                                }
-                                                disabled={isSubmitting}
-                                            >
-                                                <SelectTrigger className="bg-muted">
-                                                    <SelectValue placeholder="Select frequency" />
-                                                </SelectTrigger>
-                                                <SelectContent>
-                                                    <SelectItem value="monthly">Monthly</SelectItem>
-                                                    <SelectItem value="quarterly">Quarterly</SelectItem>
-                                                    <SelectItem value="yearly">Yearly</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                        </div>
-
-                                    </div>
-                                }
-
-
-                                {/* Description */}
-                                <div className={"flex w-full flex-col !mt-6"}>
-
-                                    <div className="flex justify-between items-center">
-                                        <FormLabel
-                                            title={'Decription'}
-                                            errors={errors.description}
-                                            touched={touched.description}
-                                        />
-                                        <Switch
-                                            className={"-mt-2"}
-                                            id="description"
-                                            checked={toggleDescription}
+                            <div className="flex flex-col gap-2">
+                                <Label>
+                                    {values.isRecurring ? "Start Date" : "Date"}
+                                </Label>
+                                <Popover open={openDate} onOpenChange={setOpenDate}>
+                                    <PopoverTrigger asChild>
+                                        <Button
+                                            variant="outline"
+                                            className="justify-start text-left font-normal"
                                             disabled={isSubmitting}
-                                            onCheckedChange={(checked) => {
-                                                if (!checked) {
-                                                    setFieldValue("description", "")
-                                                }
-                                                settoggleDescription(!toggleDescription)
+                                        >
+                                            <CalendarIcon className="mr-2 h-4 w-4" />
+                                            {values.date ? FormattedDate2(values.date) : "Select a date"}
+                                        </Button>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-auto p-0">
+                                        <Calendar
+                                            mode="single"
+                                            selected={values.date}
+                                            onSelect={(date) => {
+                                                setFieldValue("date", date)
+                                                setOpenDate(false)
                                             }}
+                                            disabled={isSubmitting}
                                         />
+                                    </PopoverContent>
+                                </Popover>
+                            </div>
+
+
+                            {/* Recurring */}
+                            <div className={cn("flex justify-between items-center gap-2")}>
+                                <Label htmlFor="recurring">Recurring</Label>
+                                <Switch
+                                    id="recurring"
+                                    checked={values.isRecurring}
+                                    onCheckedChange={(checked) => setFieldValue("isRecurring", checked)}
+                                    disabled={isSubmitting}
+                                />
+
+                            </div>
+
+                            {values.isRecurring &&
+
+                                <div className={"flex flex-col"}>
+
+                                    <div className="flex flex-col gap-2">
+                                        {!toggleNoEndDate &&
+                                            <>
+                                                <Label>End Date</Label>
+                                                <Popover open={openEndDate} onOpenChange={setOpenEndDate}>
+                                                    <PopoverTrigger asChild>
+                                                        <Button
+                                                            variant="outline"
+                                                            className="justify-start text-left font-normal"
+                                                            disabled={isSubmitting}
+                                                        >
+                                                            <CalendarIcon className="mr-2 h-4 w-4" />
+                                                            {values.endDate ? FormattedDate2(values.endDate) : "Select a date"}
+                                                        </Button>
+                                                    </PopoverTrigger>
+                                                    <PopoverContent className="w-auto p-0">
+                                                        <Calendar
+                                                            mode="single"
+                                                            selected={values.endDate}
+                                                            onSelect={(date) => {
+                                                                setFieldValue("endDate", date)
+                                                                setOpenEndDate(false)
+                                                            }}
+                                                            disabled={isSubmitting}
+                                                        />
+                                                    </PopoverContent>
+                                                </Popover>
+                                            </>
+                                        }
+
+                                        <div className="flex items-center justify-between mt-2 ml-auto">
+                                            <div className="flex items-center space-x-2">
+                                                <Checkbox
+                                                    id="no-end-date"
+                                                    checked={toggleNoEndDate}
+                                                    onCheckedChange={(checked) => {
+                                                        if (checked) {
+                                                            setFieldValue("endDate", "")
+                                                        }
+                                                        setToggleNoEndDate(!toggleNoEndDate)
+                                                    }}
+                                                    disabled={isSubmitting}
+                                                />
+                                                <Label htmlFor="no-end-date" className="text-sm">
+                                                    No end date
+                                                </Label>
+                                            </div>
+                                        </div>
+
                                     </div>
 
-                                    <AnimatePresence mode="wait">
-                                        {toggleDescription &&
-                                            <motion.div
-                                                className="mt-1"
-                                                initial={{ y: 5, opacity: 0 }}
-                                                animate={{ y: 0, opacity: 1, transition: { duration: 0.3 } }}
-                                                exit={{ y: 5, opacity: 0, transition: { duration: 0.3 } }}
-                                            >
-                                                <Textarea
-                                                    label={'Description'}
-                                                    errors={errors.description}
-                                                    touched={touched.description}
-                                                    onChange={e => setFieldValue("description", e.target.value)}
-                                                    onBlur={handleBlur}
-                                                    name="description"
-                                                    value={values?.description}
-                                                    disabled={isSubmitting}
-                                                    placeholder="Payment for..."
-                                                />
-                                            </motion.div>
-                                        }
-                                    </AnimatePresence>
+                                    <div className="grid gap-2">
+                                        <Label htmlFor="frequency">Frequency</Label>
+                                        <Select
+                                            value={values.frequency}
+                                            onValueChange={(value) =>
+                                                setFieldValue("frequency", value)
+                                            }
+                                            disabled={isSubmitting}
+                                        >
+                                            <SelectTrigger className="bg-muted">
+                                                <SelectValue placeholder="Select frequency" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="monthly">Monthly</SelectItem>
+                                                <SelectItem value="quarterly">Quarterly</SelectItem>
+                                                <SelectItem value="yearly">Yearly</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+
+                                </div>
+                            }
+
+
+                            {/* Description */}
+                            <div className={"flex w-full flex-col !mt-6"}>
+
+                                <div className="flex justify-between items-center">
+                                    <FormLabel
+                                        title={'Decription'}
+                                        errors={errors.description}
+                                        touched={touched.description}
+                                    />
+                                    <Switch
+                                        className={"-mt-2"}
+                                        id="description"
+                                        checked={toggleDescription}
+                                        disabled={isSubmitting}
+                                        onCheckedChange={(checked) => {
+                                            if (!checked) {
+                                                setFieldValue("description", "")
+                                            }
+                                            settoggleDescription(!toggleDescription)
+                                        }}
+                                    />
                                 </div>
 
-                                <Button type="submit">
-                                    {isSubmitting ? 'Saving...' : 'Save'}
-                                </Button>
-                            </Form>
-                        )}
-                    </Formik>
+                                <AnimatePresence mode="wait">
+                                    {toggleDescription &&
+                                        <motion.div
+                                            className="mt-1"
+                                            initial={{ y: 5, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1, transition: { duration: 0.3 } }}
+                                            exit={{ y: 5, opacity: 0, transition: { duration: 0.3 } }}
+                                        >
+                                            <Textarea
+                                                label={'Description'}
+                                                errors={errors.description}
+                                                touched={touched.description}
+                                                onChange={e => setFieldValue("description", e.target.value)}
+                                                onBlur={handleBlur}
+                                                name="description"
+                                                value={values?.description}
+                                                disabled={isSubmitting}
+                                                placeholder="Payment for..."
+                                            />
+                                        </motion.div>
+                                    }
+                                </AnimatePresence>
+                            </div>
 
-                </DialogContent>
-            </Dialog>
+                            <Button type="submit">
+                                {isSubmitting ? 'Saving...' : 'Save'}
+                            </Button>
+                        </Form>
+                    )}
+                </Formik>
+            </UISheet>
         </>
     )
 }
