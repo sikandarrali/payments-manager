@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.9.1
+- change summary tab size
+
 ### 1.9.0
 - Added Filter by Type option on list view
 
