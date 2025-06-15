@@ -1,5 +1,6 @@
 import {
 	COLLECTION_ID_ITEMS,
+	COLLECTION_ID_ITEMS_TWO,
 	DATABASE_ID,
 	databases
 } from "./appwrite";
@@ -11,6 +12,11 @@ const collections = [
 		databaseID: DATABASE_ID,
 		id: COLLECTION_ID_ITEMS,
 		name: "items",
+	},
+	{
+		databaseID: DATABASE_ID,
+		id: COLLECTION_ID_ITEMS_TWO,
+		name: "itemsTwo",
 	},
 ];
 

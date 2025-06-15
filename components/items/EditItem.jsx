@@ -24,7 +24,7 @@ import { Form, Formik } from "formik";
 import { useState } from "react"
 import { cn, scrollToTop } from "@/lib/utils"
 import { Button } from "../ui/button"
-import { CalendarIcon, Edit2 } from "lucide-react"
+import { CalendarIcon, Edit, Edit2 } from "lucide-react"
 import { db } from "../appwrite/database"
 import { COLLECTION_ID_ITEMS, DATABASE_ID, databases } from "../appwrite/appwrite"
 import { ID } from "node-appwrite"
@@ -74,14 +74,14 @@ const EditItem = ({ item }) => {
 
     return (
         <>
-
             <Button
-                variant='outline'
-                size="icon"
                 onClick={() => setIsOpen(true)}
-                className="w-8 h-8"
+                variant="ghost"
+                size="sm"
+                className="h-8 w-8 p-0 hover:bg-background/80"
             >
-                <Edit2 className="w-3.5 h-3.5" />
+                <Edit className="h-4 w-4" />
+                <span className="sr-only">Edit</span>
             </Button>
 
 

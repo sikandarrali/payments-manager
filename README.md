@@ -4,7 +4,11 @@ Track your payments in one place
 
 ## Changelog
 
- ### 1.7.0
+
+### 1.8.0
+- New UI for single list item
+
+### 1.7.0
 - replaced Sheet with Dialog for Add/Edit
 - fixed date picker
 - add App Version in Sidebar
