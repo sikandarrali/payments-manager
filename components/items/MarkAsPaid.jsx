@@ -6,6 +6,7 @@ import { ToastOptions } from '@/lib/ToastOptions';
 import { useI18n } from '@/locales/client';
 import { useData } from '../contexts/DataContext';
 import { Query } from 'appwrite';
+import { CheckCircle, Circle } from 'lucide-react';
 
 const MarkAsPaid = ({ item }) => {
 
@@ -49,13 +50,33 @@ const MarkAsPaid = ({ item }) => {
     }
 
     return (
-        <Button
-            className={"ml-auto rounded-full bg-card"}
-            onClick={() => onMarkAsPaid()}
-            variant='outline'
-        >
-            {isPaid ? "Mark as Unpaid" : "Mark as Paid"}
-        </Button>
+        <>
+            {/* <Button
+                className={"ml-auto rounded-full bg-card"}
+                onClick={() => onMarkAsPaid()}
+                variant='outline'
+            >
+                {isPaid ? "Mark as Unpaid" : "Mark as Paid"}
+            </Button> */}
+
+            <Button
+                className="w-full transition-colors"
+                variant={isPaid ? "secondary" : "outline"}
+                onClick={() => onMarkAsPaid()}
+            >
+                {isPaid ? (
+                    <>
+                        <CheckCircle className="h-4 w-4 mr-2 text-green-600 dark:text-green-400" />
+                        Mark as Unpaid
+                    </>
+                ) : (
+                    <>
+                        <Circle className="h-4 w-4 mr-2" />
+                        Mark as Paid
+                    </>
+                )}
+            </Button>
+        </>
     )
 }
 

@@ -50,7 +50,6 @@ export const DataProvider = ({ children }) => {
         getItems()
     }, [])
 
-
     // Realtime. Re-populate documents when created.
     useEffect(() => {
         const unsubscribe = client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_ID_ITEMS}.documents`, (response) => {
@@ -150,11 +149,6 @@ export const DataProvider = ({ children }) => {
 
 
     }, [currentMonth, defaultItems]);
-
-
-
-
-
 
     const values = {
         items,
