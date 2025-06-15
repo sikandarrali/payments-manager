@@ -5,6 +5,11 @@ Track your payments in one place
 ## Changelog
 
 
+### 1.8.1
+- Moved "Back to Top" button to right
+- Change Summary Tab width
+- Fixed sorting of items based on Day instead of complete date
+
 ### 1.8.0
 - New UI for single list item
 

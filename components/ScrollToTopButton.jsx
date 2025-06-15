@@ -32,10 +32,10 @@ const ScrollToTopButton = () => {
         <AnimatePresence>
             {visible &&
                 <motion.div
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-                    exit={{ opacity: 0, x: -100, transition: { duration: 0.5 } }}
-                    className={'fixed bottom-36 left-8'}
+                    exit={{ opacity: 0, x: 100, transition: { duration: 0.5 } }}
+                    className={'fixed bottom-36 right-8'}
                     onClick={scrollToTop}
                 >
                     <Button variant={''} className={'rounded-full h-12 w-12 p-2'}>
