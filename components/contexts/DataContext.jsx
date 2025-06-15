@@ -104,8 +104,10 @@ export const DataProvider = ({ children }) => {
             if (a.type !== b.type) {
                 return a.type === 'income' ? 1 : -1;
             }
-            if (a.isPaid !== b.isPaid) {
-                return a.isPaid ? 1 : -1;
+            const aIsPaid = a.paidMonths?.includes(paidKey);
+            const bIsPaid = b.paidMonths?.includes(paidKey);
+            if (aIsPaid !== bIsPaid) {
+                return aIsPaid ? 1 : -1;
             }
             const aDay = new Date(a.date).getDate();
             const bDay = new Date(b.date).getDate();
@@ -115,7 +117,7 @@ export const DataProvider = ({ children }) => {
         setItems(sorted);
 
         const sumOfPayments = sorted
-            .filter(item => item.type === "payment" && item.isPaid && item.paidMonths.includes(paidKey))
+            .filter(item => item.type === "payment" && item.paidMonths?.includes(paidKey))
             .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
         setSumOfPayments(sumOfPayments);
 
@@ -125,7 +127,7 @@ export const DataProvider = ({ children }) => {
         setSumOfIncomes(sumOfIncomes);
 
         const sumOfStillDue = sorted
-            .filter(item => item.type === "payment" && item.isPaid === false)
+            .filter(item => item.type === "payment" && !item.paidMonths?.includes(paidKey))
             .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
         setSumOfStillDue(sumOfStillDue);
 
