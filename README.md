@@ -4,6 +4,8 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.8.2
+- Partially fixed sorting
 
 ### 1.8.1
 - Moved "Back to Top" button to right
