@@ -18,7 +18,7 @@ const Summary = () => {
                     <CardTitle className="text-sm font-medium text-blue-500">Balance</CardTitle>
                     <WalletIcon className="h-4 w-4 text-blue-500" />
                 </CardHeader>
-                <CardContent className="w-[180px]">
+                <CardContent className="w-[165px]">
                     <div className="text-2xl font-bold">€ {sumOfIncomes - sumOfPayments}</div>
                     {percentage > 0 &&
                         <div className="mt-2">
@@ -37,7 +37,7 @@ const Summary = () => {
                     <CardTitle className="text-sm font-medium text-orange-500">Still Due</CardTitle>
                     <ArrowUpIcon className="h-4 w-4 text-orange-500" />
                 </CardHeader>
-                <CardContent className="w-[180px]">
+                <CardContent className="w-[165px]">
                     <div className="text-2xl font-bold">€ {sumOfStillDue}</div>
                     <p className="text-xs text-muted-foreground">{GetMonthNameYearFromDateObject(currentMonth)}</p>
                 </CardContent>
@@ -47,7 +47,7 @@ const Summary = () => {
                     <CardTitle className="text-sm font-medium text-red-500">Expense</CardTitle>
                     <Banknote className="h-4 w-4 text-red-500" />
                 </CardHeader>
-                <CardContent className="w-[180px]">
+                <CardContent className="w-[165px]">
                     <div className="text-2xl font-bold">€ {sumOfTotalExpense}</div>
                     <p className="text-xs text-muted-foreground">{GetMonthNameYearFromDateObject(currentMonth)}</p>
                 </CardContent>
@@ -57,7 +57,7 @@ const Summary = () => {
                     <CardTitle className="text-sm font-medium text-green-500">Income</CardTitle>
                     <ArrowDownIcon className="h-4 w-4 text-green-500" />
                 </CardHeader>
-                <CardContent className="w-[180px]">
+                <CardContent className="w-[165px]">
                     <div className="text-2xl font-bold">€ {sumOfIncomes}</div>
                     <p className="text-xs text-muted-foreground">{GetMonthNameYearFromDateObject(currentMonth)}</p>
                 </CardContent>
