@@ -4,6 +4,10 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.9.2
+- Summary: added "After Due" to show remaining balance at hand after all dues are paid
+
+
 ### 1.9.1
 - change summary tab size
 
