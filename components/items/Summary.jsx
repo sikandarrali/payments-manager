@@ -20,16 +20,18 @@ const Summary = () => {
                 </CardHeader>
                 <CardContent className="w-[160px]">
                     <div className="text-2xl font-bold">€ {sumOfIncomes - sumOfPayments}</div>
-                    {percentage > 0 &&
+                    {/* {percentage > 0 &&
                         <div className="mt-2">
                             <Progress value={percentage} className="h-2" />
                             <div className="text-xs text-muted-foreground mt-1 flex items-center justify-between gap-2">
-                                {/* <span>{GetMonthNameYearFromDateObject(currentMonth)}</span> */}
-                                {/* <span className='w-1 h-1 bg-foreground rounded-full'></span> */}
                                 {percentage > 0 && <span className='font-medium'>{percentage.toFixed(2)}% spent </span>}
                             </div>
                         </div>
-                    }
+                    } */}
+
+                    <p className="text-xs text-muted-foreground">
+                        After Due: <span className='font-semibold text-sm'>€ {(sumOfIncomes - sumOfPayments) - sumOfStillDue}</span>
+                    </p>
                 </CardContent>
             </Card>
             <Card>
