@@ -59,9 +59,9 @@ export const AuthProvider = ({ children }) => {
 		}
 	};
 
-	useEffect(() => {
-		if (user) setLoading(false)
-	}, [router]);
+        useEffect(() => {
+                if (user) setLoading(false)
+        }, [user]);
 
 	const updateUserPrefs = async (prefs, picture) => {
 		let tempPrefs = { ...prefs, picture: picture }
