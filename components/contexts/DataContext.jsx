@@ -14,20 +14,16 @@ export const DataProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const today = new Date();
-    const [currentMonth, setCurrentMonth] = useState({});
+    const [currentMonth, setCurrentMonth] = useState({
+        month: today.getMonth() + 1,
+        year: today.getFullYear(),
+    });
     const [sumOfPayments, setSumOfPayments] = useState(0);
     const [sumOfTotalExpense, setSumOfTotalExpense] = useState(0);
     const [sumOfStillDue, setSumOfStillDue] = useState(0);
     const [sumOfIncomes, setSumOfIncomes] = useState(0);
 
     const paidKey = `${String(currentMonth.month).padStart(2, "0")}-${currentMonth.year}`;
-
-    useEffect(() => {
-        setCurrentMonth({
-            month: today.getMonth() + 1,
-            year: today.getFullYear(),
-        });
-    }, []);
 
     useEffect(() => {
         const getItems = async () => {
@@ -136,7 +132,7 @@ export const DataProvider = ({ children }) => {
             .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
         setSumOfTotalExpense(sumOfTotalExp);
 
-    }, [currentMonth, defaultItems]);
+    }, [currentMonth, defaultItems, paidKey]);
 
     const values = {
         items,
