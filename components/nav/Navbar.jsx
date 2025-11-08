@@ -203,7 +203,7 @@ const Sidebar = ({ open, onOpenChange, isPWAInstalled }) => {
 
 					<div className={'mx-6 !mt-4 px-4 pt-6 flex justify-center items-center gap-1'} dir={'ltr'}>
 						<Copyright className={'w-3 h-3 stroke-[1.5]'} />
-						<span className={'font-medium text-sm'}>Sikandar Ali Chishty</span>
+						<a href="https://github.com/sikandarchishty" className={'font-medium text-sm'}>Sikandar Ali</a>
 					</div>
 
 					<div className={'flex gap-4 justify-center text-sm mt-8 mb-4'}>

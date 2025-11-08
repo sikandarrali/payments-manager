@@ -4,6 +4,9 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.9.4
+- Add link to copyright name "Sikandar Ali"
+
 ### 1.9.3
 - Fixed disappearing of payment/expense items
 - Add AppVersion component
