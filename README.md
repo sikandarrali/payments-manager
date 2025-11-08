@@ -4,6 +4,10 @@ Track your payments in one place
 
 ## Changelog
 
+### 1.9.3
+- Fixed disappearing of payment/expense items
+- Add AppVersion component
+
 ### 1.9.2
 - Summary: added "After Due" to show remaining balance at hand after all dues are paid
 

@@ -14,7 +14,7 @@ const MarkAsPaid = ({ item }) => {
 
     const { paidKey } = useData()
 
-    const isPaid = item.paidMonths.includes(paidKey)
+    const isPaid = item.paidMonths?.includes(paidKey) || false
 
     const onMarkAsPaid = async () => {
 

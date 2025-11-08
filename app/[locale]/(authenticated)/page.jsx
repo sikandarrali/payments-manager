@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 export default function Page() {
 	const scrollRef = useRef(null);
 	// const [searchTerm, setSearchTerm] = useState("")
-	const { items } = useData()
+	const { items, defaultItems } = useData()
 	const [filterBy, setFilterBy] = useState("payment")
 
 	useEffect(() => {
@@ -20,6 +20,8 @@ export default function Page() {
 			FixStickyHeaderScrollError(scrollRef.current);
 		}
 	}, []);
+
+	// console.log(items)
 
 	return (
 		<PageContainer hideBackButton>

@@ -26,6 +26,7 @@ import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
 import { Logo } from "@/components/nav/Logo";
 import { Separator } from "@/components/ui/separator";
 import AddItemDialog from "../items/AddItemDialog";
+import { AppVersion } from "../AppVersion";
 
 const Navbar = ({ hideAddButton }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -227,7 +228,7 @@ const Sidebar = ({ open, onOpenChange, isPWAInstalled }) => {
 						</Link>
 					</div>
 					<div className={'px-6 gap-2 text-center text-sm text-muted-foreground'}>
-						App Version <span className={'font-semibold'}>1.9.2</span>
+						App Version <span className={'font-semibold'}><AppVersion /></span>
 					</div>
 				</div>
 

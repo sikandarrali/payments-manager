@@ -11,7 +11,11 @@ import { Separator } from "@/components/ui/separator"
 const SingleItem = ({ item }) => {
 
     const { paidKey } = useData()
-    const isPaid = item.paidMonths.includes(paidKey)
+    const isPaid = item.paidMonths?.includes(paidKey) || false
+
+    // console.log(paidKey)
+
+
 
     return (
         <div className="w-full mx-auto">

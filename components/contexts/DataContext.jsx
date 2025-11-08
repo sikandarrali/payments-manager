@@ -69,70 +69,108 @@ export const DataProvider = ({ children }) => {
     useEffect(() => {
         const { year, month } = currentMonth;
 
+        // Helper function to safely parse and extract year/month from a date string
+        // Handles timezone issues by parsing ISO date strings directly when possible
+        const getYearMonth = (dateStr) => {
+            if (!dateStr) return null;
+            
+            try {
+                // If it's already a Date object, convert to ISO string first
+                let dateValue = dateStr instanceof Date ? dateStr.toISOString() : dateStr;
+                
+                // Try to parse ISO date string directly (YYYY-MM-DD or YYYY-MM-DDTHH:mm:ss.sssZ)
+                // This avoids timezone conversion issues
+                if (typeof dateValue === 'string') {
+                    // Match ISO date format: YYYY-MM-DD
+                    const isoDateMatch = dateValue.match(/^(\d{4})-(\d{2})-(\d{2})/);
+                    if (isoDateMatch) {
+                        return {
+                            year: parseInt(isoDateMatch[1], 10),
+                            month: parseInt(isoDateMatch[2], 10)
+                        };
+                    }
+                }
+                
+                // Fallback: parse as Date and use UTC methods to avoid timezone issues
+                const date = dateStr instanceof Date ? dateStr : new Date(dateStr);
+                
+                // Check if date is valid
+                if (isNaN(date.getTime())) {
+                    console.warn('Invalid date:', dateStr);
+                    return null;
+                }
+                
+                // Use UTC methods to get consistent year/month regardless of timezone
+                return {
+                    year: date.getUTCFullYear(),
+                    month: date.getUTCMonth() + 1
+                };
+            } catch (error) {
+                console.warn('Error parsing date:', dateStr, error);
+                return null;
+            }
+        };
+
+        const isInMonth = (dateStr) => {
+            const dateInfo = getYearMonth(dateStr);
+            if (!dateInfo) return false;
+            return dateInfo.year === year && dateInfo.month === month;
+        };
+
         const filtered = defaultItems.filter(item => {
-            const start = new Date(item.date);
-            const startY = start.getFullYear();
-            const startM = start.getMonth() + 1;
+            // Validate that item has a date
+            if (!item.date) {
+                console.warn('Item missing date:', item.$id);
+                return false;
+            }
 
-            const hasEnd = Boolean(item.endDate);
-            const end = hasEnd ? new Date(item.endDate) : null;
-            const endY = hasEnd ? end.getFullYear() : null;
-            const endM = hasEnd ? end.getMonth() + 1 : null;
+            const startInfo = getYearMonth(item.date);
+            if (!startInfo) return false;
 
-            const startsBeforeOrIn =
-                startY < year ||
-                (startY === year && startM <= month);
+            const startsBeforeOrIn = startInfo.year < year || 
+                                    (startInfo.year === year && startInfo.month <= month);
 
             if (item.isRecurring) {
-                if (hasEnd) {
-                    const endsAfterOrIn =
-                        endY > year ||
-                        (endY === year && endM >= month);
+                if (item.endDate) {
+                    const endInfo = getYearMonth(item.endDate);
+                    if (!endInfo) {
+                        // If endDate is invalid but recurring, treat as no end date
+                        return startsBeforeOrIn;
+                    }
+                    const endsAfterOrIn = endInfo.year > year || 
+                                        (endInfo.year === year && endInfo.month >= month);
                     return startsBeforeOrIn && endsAfterOrIn;
                 }
+                // No end date - show if started before or in current month
                 return startsBeforeOrIn;
             }
 
-            return startY === year && startM === month;
+            // Non-recurring: only show if date is in current month
+            return isInMonth(item.date);
         });
 
-        const sorted = filtered.sort((a, b) => {
-            if (a.type !== b.type) {
-                return a.type === 'income' ? 1 : -1;
-            }
-            const aIsPaid = a.paidMonths?.includes(paidKey);
-            const bIsPaid = b.paidMonths?.includes(paidKey);
-            if (aIsPaid !== bIsPaid) {
-                return aIsPaid ? 1 : -1;
-            }
-            const aDay = new Date(a.date).getDate();
-            const bDay = new Date(b.date).getDate();
-            return aDay - bDay;
+        const sorted = [...filtered].sort((a, b) => {
+            if (a.type !== b.type) return a.type === "income" ? 1 : -1;
+            const aPaid = a.paidMonths?.includes(paidKey);
+            const bPaid = b.paidMonths?.includes(paidKey);
+            if (aPaid !== bPaid) return aPaid ? 1 : -1;
+            return new Date(a.date).getDate() - new Date(b.date).getDate();
         });
 
         setItems(sorted);
 
-        const sumOfPayments = sorted
-            .filter(item => item.type === "payment" && item.paidMonths?.includes(paidKey))
-            .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
-        setSumOfPayments(sumOfPayments);
+        const sum = (filterFn) =>
+            sorted
+                .filter(filterFn)
+                .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
 
-        const sumOfIncomes = sorted
-            .filter(item => item.type === "income")
-            .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
-        setSumOfIncomes(sumOfIncomes);
-
-        const sumOfStillDue = sorted
-            .filter(item => item.type === "payment" && !item.paidMonths?.includes(paidKey))
-            .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
-        setSumOfStillDue(sumOfStillDue);
-
-        const sumOfTotalExp = sorted
-            .filter(item => item.type === "payment")
-            .reduce((sum, { amount }) => sum + (parseFloat(amount) || 0), 0);
-        setSumOfTotalExpense(sumOfTotalExp);
+        setSumOfPayments(sum(item => item.type === "payment" && item.paidMonths?.includes(paidKey)));
+        setSumOfIncomes(sum(item => item.type === "income"));
+        setSumOfStillDue(sum(item => item.type === "payment" && !item.paidMonths?.includes(paidKey)));
+        setSumOfTotalExpense(sum(item => item.type === "payment"));
 
     }, [currentMonth, defaultItems, paidKey]);
+
 
     const values = {
         items,
@@ -142,7 +180,8 @@ export const DataProvider = ({ children }) => {
         sumOfStillDue,
         sumOfPayments,
         sumOfTotalExpense,
-        paidKey
+        paidKey,
+        defaultItems
     };
 
     return (
