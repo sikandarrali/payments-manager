@@ -14,10 +14,14 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
-    const [currentTheme, setCurrentTheme] = useState(localStorage.getItem(LOCAL_THEME_NAME));
-    const htmlElement = document.documentElement;
+    const [currentTheme, setCurrentTheme] = useState(() =>
+        typeof window !== 'undefined' ? localStorage.getItem(LOCAL_THEME_NAME) : null
+    );
+    const htmlElement = typeof document !== 'undefined' ? document.documentElement : null;
 
-    const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const systemMode = typeof window !== 'undefined'
+        ? window.matchMedia('(prefers-color-scheme: dark)').matches
+        : false
 
     // Get/Set Dark Mode & Current Theme Variables
     useLayoutEffect(() => {
