@@ -8,8 +8,18 @@ import { useData } from "@/components/contexts/DataContext";
 import MonthSwitcher from "@/components/items/MonthSwitcher";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/components/contexts/AuthContext";
+import { Homepage } from "@/components/home/Homepage";
 
 export default function Page() {
+	const { user } = useAuth();
+
+	if (!user) return <Homepage />;
+
+	return <Dashboard />;
+}
+
+function Dashboard() {
 	const scrollRef = useRef(null);
 	// const [searchTerm, setSearchTerm] = useState("")
 	const { items, defaultItems } = useData()
