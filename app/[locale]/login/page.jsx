@@ -28,9 +28,16 @@ export default function Home() {
 					<DarkModeToggle />
 				</div>
 
+				<div className="mx-4 mt-12 text-center">
+					<UIText weight={'semibold'} variant={'heading'} text={t('title')} />
+					<p className="mt-2 text-sm text-muted-foreground">
+						{t('tagline')}
+					</p>
+				</div>
+
 				<Button
 					onClick={() => onGoogleWithLogin()}
-					className="mx-4 mt-20 ltr:py-4 rtl:py-5 flex items-center gap-2 rtl:gap-3"
+					className="mx-4 mt-8 ltr:py-4 rtl:py-5 flex items-center gap-2 rtl:gap-3"
 				>
 					<svg
 						width="24"
