@@ -1,6 +1,6 @@
 "use client"
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { createContext, useContext, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { account } from "../appwrite/appwrite";
 import LoadingFallback from "../loaders/LoadingFallback";
@@ -8,14 +8,22 @@ import { useCurrentLocale } from "@/locales/client";
 import Cookies from 'js-cookie'
 import { EncodeUserId } from "@/lib/EncodeDecode";
 import { LOCAL_THEME_NAME, DEFAULT_THEME } from "@/lib/defaults";
+import { LOCALE_PUBLIC_ROUTES, LOCALE_NEUTRAL_ROUTES, LOCALE_HOME_ROUTE } from "@/lib/routes";
 
 const AuthContext = createContext();
+
+// routes that must render for guests immediately, without waiting on the
+// client-side session check — otherwise crawlers (e.g. Google's OAuth
+// verification bot) and no-JS clients only ever see a blank loading spinner
+const GUEST_SAFE_ROUTES = [...LOCALE_PUBLIC_ROUTES(), ...LOCALE_NEUTRAL_ROUTES(), ...LOCALE_HOME_ROUTE];
 
 export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const router = useRouter();
+	const pathname = usePathname();
 	const currentLocale = useCurrentLocale()
+	const isGuestSafeRoute = GUEST_SAFE_ROUTES.includes(pathname);
 
 	useLayoutEffect(() => {
 		getLoggedInGoogleUser().then(() => setLoading(false));
@@ -125,7 +133,7 @@ export const AuthProvider = ({ children }) => {
 
 	return (
 		<AuthContext.Provider value={values}>
-			{loading ? <LoadingFallback /> : children}
+			{loading && !isGuestSafeRoute ? <LoadingFallback /> : children}
 		</AuthContext.Provider>
 	);
 };
