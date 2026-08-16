@@ -75,6 +75,11 @@
     "tooltipPendingUser": "User has not accepted invitation.",
     "userEmailPlaceholder": "Enter User Email"
   },
+  "home": {
+    "title": "Payments Manager",
+    "tagline": "Track your payments in one place. Manage recurring bills, due dates, and expenses effortlessly.",
+    "getStarted": "Get Started"
+  },
   "joinGroup": {
     "btnBackToGroups": "Back to Groups",
     "general_argument_invalid": "Unable to Join Group",
@@ -131,7 +136,9 @@
     "searching": "Seaching, please wait..."
   },
   "login": {
-    "withGoogle": "Login with Google"
+    "withGoogle": "Login with Google",
+    "title": "Payments Manager",
+    "tagline": "Track your payments in one place. Manage recurring bills, due dates, and expenses effortlessly."
   },
   "logout": {
     "btnLogout": "Logout",
