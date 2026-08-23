@@ -258,6 +258,7 @@ const AddItemDialog = ({ isOpen, setisOpen }) => {
                                         <SelectContent>
                                             <SelectItem value="monthly">Monthly</SelectItem>
                                             <SelectItem value="quarterly">Quarterly</SelectItem>
+                                            <SelectItem value="semiannual">Every 6 Months</SelectItem>
                                             <SelectItem value="yearly">Yearly</SelectItem>
                                         </SelectContent>
                                     </Select>
