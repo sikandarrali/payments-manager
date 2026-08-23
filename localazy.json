@@ -1,8 +1,5 @@
 {
 
-  "writeKey": "REDACTED_LOCALAZY_WRITE_KEY",
-  "readKey": "REDACTED_LOCALAZY_READ_KEY",
-
   "upload": {
     "type": "json",
     "files": "locales/compiled-lang/en/translations.json"
