@@ -8,6 +8,8 @@
 - Removed hardcoded Localazy API keys from the repo; rotated keys and moved them to environment variables
 - Moved changelog out of the README into its own CHANGELOG.md
 - Removed unused dependencies and dead code across the codebase
+- Added MIT license
+- Added appwrite.json database schema and .env.example for self-hosting/local setup
 
 ### 1.9.4
 - Add link to copyright name "Sikandar Ali"
