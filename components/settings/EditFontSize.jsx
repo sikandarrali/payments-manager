@@ -14,9 +14,7 @@ import { Check, ChevronsUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
     Command,
-    CommandEmpty,
     CommandGroup,
-    CommandInput,
     CommandItem,
     CommandList,
 } from "@/components/ui/command"
@@ -26,16 +24,14 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover"
 import {UISheetFooterWithAction} from "@/components/theme/UISheetFooterWithAction";
-import {useRouter} from "next/navigation";
 import {UISheet} from "@/components/theme/UISheet";
 
 export const EditFontSize = ({ open, onOpenChange }) => {
     const [adding, setAdding] = useState(false);
     const [disabled, setDisabled] = useState(false);
-    const {user, setUser} = useAuth()
+    const {user} = useAuth()
     const t = useScopedI18n('settings.fontSize');
     const locale = useCurrentLocale();
-    const router = useRouter()
 
     const [openFontSizeDropdown, setOpenFontSizeDropdown] = useState(false)
     const [selectedFontSize, setSelectedFont] = useState(user?.prefs?.fontSize || "base")

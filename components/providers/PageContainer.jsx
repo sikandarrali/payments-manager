@@ -1,19 +1,9 @@
 "use client"
 import { cn } from "@/lib/utils";
-import { MoveLeft } from "lucide-react";
-import UIText from "@/components/theme/UIText";
-import { Button } from "@/components/ui/button";
 import Navbar from "@/components/nav/Navbar";
-import { usePathname, useRouter } from "next/navigation";
-import { LOCALE_HOME_ROUTE } from "@/lib/routes";
-import { useAuth } from "@/components/contexts/AuthContext";
 import { AddButtonWrapper } from "../theme/AddButtonWrapper";
 
 const PageContainer = ({ children, hideAddButton, title, hideBackButton, className, headerTextOrientation, headerClass, hideNavbar }) => {
-	const router = useRouter()
-	const pathname = usePathname()
-	const { user } = useAuth()
-
 	return (
 		<div
 			className={cn(

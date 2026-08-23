@@ -1,12 +1,5 @@
 import { Calendar } from "@/components/ui/calendar"
 import { Checkbox } from "@/components/ui/checkbox"
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
@@ -35,7 +28,6 @@ const AddItemDialog = ({ isOpen, setisOpen }) => {
 
     const t = useI18n()
 
-    const [isEditing, setisEditing] = useState(false)
     const [submittingForm, setSubmittingForm] = useState(false)
 
     const [activeType, setActiveType] = useState('payment')

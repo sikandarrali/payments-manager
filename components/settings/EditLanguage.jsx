@@ -30,7 +30,7 @@ import {UISheet} from "@/components/theme/UISheet";
 export const EditLanguage = ({ open, onOpenChange }) => {
     const [adding, setAdding] = useState(false);
     const [disabled, setDisabled] = useState(false);
-    const {user, setUser} = useAuth()
+    const {user} = useAuth()
     const t = useScopedI18n('settings.language');
     const locale = useCurrentLocale();
     const ChangeLocale = useChangeLocale();

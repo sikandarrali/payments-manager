@@ -1,14 +1,8 @@
 "use client"
-import { createContext, useContext, useEffect, useLayoutEffect, useState } from "react";
-import {
-    LOCAL_THEME_NAME,
-    DEFAULT_THEME,
-    DEFAULT_VIEWPORT_COLOR_LIGHT,
-    DEFAULT_VIEWPORT_COLOR_DARK
-} from "@/lib/defaults";
+import { createContext, useContext, useLayoutEffect, useState } from "react";
+import { LOCAL_THEME_NAME } from "@/lib/defaults";
 import {GetCurrentTheme} from "@/lib/utils";
 import { ToastContainer } from "react-toastify";
-import {useTheme} from "next-themes";
 
 const AppContext = createContext();
 

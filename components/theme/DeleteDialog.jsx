@@ -7,11 +7,9 @@ import {
 } from "@/components/ui/alert-dialog";
 import { TriangleAlert } from "lucide-react";
 import { UIDialogFooter } from "@/components/theme/UIDialogFooter";
-import { useI18n } from "@/locales/client";
 import UIText from "@/components/theme/UIText";
 
 export const DeleteDialog = ({ open, onOpenChange, onDelete, title, texts }) => {
-	const t = useI18n()
 	return (
 		<AlertDialog open={open} onOpenChange={onOpenChange}>
 			<AlertDialogContent className={"w-[90%] rounded-xl overflow-auto"}>

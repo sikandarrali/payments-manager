@@ -9,6 +9,7 @@ import { NextJSThemeProvider } from "@/components/providers/NextJSThemeProvider"
 import { AppProvider } from "@/components/contexts/AppContext";
 import { ToastContainer } from "react-toastify";
 import { DataProvider } from "../contexts/DataContext";
+import { CookieBanner } from "@/components/CookieBanner/CookieBanner";
 
 const Providers = ({ children }) => {
 
@@ -41,6 +42,7 @@ const Providers = ({ children }) => {
 								<div className="relative max-w-lg mx-auto">
 									{children}
 								</div>
+								<CookieBanner />
 							</TooltipProvider>
 						</NextJSThemeProvider>
 					</DataProvider>

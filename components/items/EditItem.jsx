@@ -1,33 +1,20 @@
 import { Calendar } from "@/components/ui/calendar"
 import { Checkbox } from "@/components/ui/checkbox"
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import FormLabel from "@/components/theme/FormLabel";
-import { UITextInput } from "@/components/theme/UITextInput";
 import { ItemSchema } from "@/lib/schemas/ItemSchema";
 import { AnimatePresence, motion } from "framer-motion";
 import { Textarea } from "@/components/ui/textarea";
-import { FormattedDateForCalenderDatePick } from "@/lib/FormattedDateForCalendarPick";
-import { FormattedDate } from "@/lib/hooks/FormattedDate";
 import { Form, Formik } from "formik";
 import { useState } from "react"
-import { cn, scrollToTop } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
-import { CalendarIcon, Edit, Edit2 } from "lucide-react"
+import { CalendarIcon, Edit } from "lucide-react"
 import { db } from "../appwrite/database"
-import { COLLECTION_ID_ITEMS, DATABASE_ID, databases } from "../appwrite/appwrite"
-import { ID } from "node-appwrite"
 import { toast } from "react-toastify"
 import { ToastOptions } from "@/lib/ToastOptions"
 import { useI18n } from "@/locales/client"
