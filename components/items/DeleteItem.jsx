@@ -41,7 +41,7 @@ const DeleteItem = ({ deleteID }) => {
             <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 w-8 p-0 text-destructive hover:text-destructive hover:bg-destructive/10"
+                className="h-8 w-8 p-0 text-destructive dark:text-red-500 hover:text-destructive hover:bg-destructive/10"
                 onClick={() => setOpenDelete(true)}
             >
                 <Trash2 className="h-4 w-4" />
