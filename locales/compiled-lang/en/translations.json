@@ -77,8 +77,9 @@
   },
   "home": {
     "title": "Payments Manager",
-    "tagline": "Track your payments in one place. Manage recurring bills, due dates, and expenses effortlessly.",
-    "getStarted": "Get Started"
+    "tagline": "Track recurring bills in one tap-friendly, mobile-first view, see what's paid, what's due, and your balance at a glance.",
+    "getStarted": "Get Started",
+    "appPricing": "Its free, forever!"
   },
   "joinGroup": {
     "btnBackToGroups": "Back to Groups",
@@ -138,7 +139,7 @@
   "login": {
     "withGoogle": "Login with Google",
     "title": "Payments Manager",
-    "tagline": "Track your payments in one place. Manage recurring bills, due dates, and expenses effortlessly."
+    "tagline": "Sign in to manage your payments."
   },
   "logout": {
     "btnLogout": "Logout",

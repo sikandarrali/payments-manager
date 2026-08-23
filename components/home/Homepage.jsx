@@ -32,6 +32,10 @@ export const Homepage = () => {
 					</Button>
 				</Link>
 
+				<p className="text-center mt-6 text-sm text-muted-foreground">
+					{t('appPricing')}
+				</p>
+
 				<div className={'text-sm mt-8 mb-4 text-center left-1/2 w-full -translate-x-1/2 fixed bottom-10'} dir={'ltr'}>
 					<Link href={'/terms-of-service'} className={'text-primary font-semibold'}>Terms of Service</Link>{" "}
 					and{" "}

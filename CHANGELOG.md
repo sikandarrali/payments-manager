@@ -1,5 +1,14 @@
 # Changelog
 
+### 2.0.0
+- Fixed recurring items: Quarterly and Yearly frequency now actually control which months an item appears in, instead of showing every month
+- Added a new "Every 6 Months" recurring frequency option
+- Added a cookie notice banner and a Cookies section on the Privacy Policy page
+- Fixed Terms of Service and Privacy Policy pages incorrectly describing the app as a "marriage expense and gift tracker"; replaced contact email with a link to open a GitHub issue
+- Removed hardcoded Localazy API keys from the repo; rotated keys and moved them to environment variables
+- Moved changelog out of the README into its own CHANGELOG.md
+- Removed unused dependencies and dead code across the codebase
+
 ### 1.9.4
 - Add link to copyright name "Sikandar Ali"
 

@@ -65,7 +65,7 @@ const EditItem = ({ item }) => {
                 onClick={() => setIsOpen(true)}
                 variant="ghost"
                 size="sm"
-                className="h-8 w-8 p-0 hover:bg-background/80"
+                className="h-8 w-8 p-0"
             >
                 <Edit className="h-4 w-4" />
                 <span className="sr-only">Edit</span>
@@ -264,6 +264,7 @@ const EditItem = ({ item }) => {
                                             <SelectContent>
                                                 <SelectItem value="monthly">Monthly</SelectItem>
                                                 <SelectItem value="quarterly">Quarterly</SelectItem>
+                                                <SelectItem value="semiannual">Every 6 Months</SelectItem>
                                                 <SelectItem value="yearly">Yearly</SelectItem>
                                             </SelectContent>
                                         </Select>

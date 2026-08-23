@@ -115,6 +115,14 @@ export const DataProvider = ({ children }) => {
             return dateInfo.year === year && dateInfo.month === month;
         };
 
+        // monthly (and legacy items with no frequency set) recur every month
+        const getIntervalMonths = (frequency) => {
+            if (frequency === 'quarterly') return 3;
+            if (frequency === 'semiannual') return 6;
+            if (frequency === 'yearly') return 12;
+            return 1;
+        };
+
         const filtered = defaultItems.filter(item => {
             // Validate that item has a date
             if (!item.date) {
@@ -125,22 +133,25 @@ export const DataProvider = ({ children }) => {
             const startInfo = getYearMonth(item.date);
             if (!startInfo) return false;
 
-            const startsBeforeOrIn = startInfo.year < year || 
+            const startsBeforeOrIn = startInfo.year < year ||
                                     (startInfo.year === year && startInfo.month <= month);
 
             if (item.isRecurring) {
+                const monthsSinceStart = (year - startInfo.year) * 12 + (month - startInfo.month);
+                const matchesFrequency = monthsSinceStart % getIntervalMonths(item.frequency) === 0;
+
                 if (item.endDate) {
                     const endInfo = getYearMonth(item.endDate);
                     if (!endInfo) {
                         // If endDate is invalid but recurring, treat as no end date
-                        return startsBeforeOrIn;
+                        return startsBeforeOrIn && matchesFrequency;
                     }
-                    const endsAfterOrIn = endInfo.year > year || 
+                    const endsAfterOrIn = endInfo.year > year ||
                                         (endInfo.year === year && endInfo.month >= month);
-                    return startsBeforeOrIn && endsAfterOrIn;
+                    return startsBeforeOrIn && endsAfterOrIn && matchesFrequency;
                 }
-                // No end date - show if started before or in current month
-                return startsBeforeOrIn;
+                // No end date - show if started before or in current month, on the right cadence
+                return startsBeforeOrIn && matchesFrequency;
             }
 
             // Non-recurring: only show if date is in current month
