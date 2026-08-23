@@ -1,5 +1,4 @@
 import FormLabel from "@/components/theme/FormLabel";
-import {UITextInput} from "@/components/theme/UITextInput";
 import * as React from "react";
 import {cn} from "@/lib/utils";
 import {UINumberInput} from "@/components/theme/UINumberInput";

@@ -1,6 +1,6 @@
 import {Button} from "@/components/ui/button";
 import {Loader2Icon} from "lucide-react";
-import {useI18n, useScopedI18n} from "@/locales/client";
+import {useI18n} from "@/locales/client";
 import UIText from "@/components/theme/UIText";
 
 export const UISheetFooterWithAction = ({disabled, onSubmit, adding, onOpenChange, labelAction, labelCancel }) =>{

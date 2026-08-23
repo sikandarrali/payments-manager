@@ -2,7 +2,7 @@ import * as React from "react";
 
 import {cn, isFontSizeAllowed} from "@/lib/utils";
 import {isStringUrdu} from "@/lib/isStringUrdu";
-import {useRef, useState} from "react";
+import {useState} from "react";
 import {useAuth} from "@/components/contexts/AuthContext";
 import {cva} from "class-variance-authority";
 import {NumericFormat} from "react-number-format";
@@ -10,7 +10,6 @@ import {NumericFormat} from "react-number-format";
 export const UINumberInput = ({className, currency, variant, type, onChange, ...props}) => {
 
     const [localValue, setLocalValue] = useState("")
-    const inputRef = useRef(null)
     const {user} = useAuth()
     const prefs = user?.prefs
     const isUrdu = isStringUrdu(localValue)

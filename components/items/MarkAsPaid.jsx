@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 import { ToastOptions } from '@/lib/ToastOptions';
 import { useI18n } from '@/locales/client';
 import { useData } from '../contexts/DataContext';
-import { Query } from 'appwrite';
 import { CheckCircle, Circle } from 'lucide-react';
 
 const MarkAsPaid = ({ item }) => {

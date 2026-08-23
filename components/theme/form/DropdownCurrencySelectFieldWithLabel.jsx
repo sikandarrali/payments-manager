@@ -2,13 +2,12 @@ import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
 import UIText from "@/components/theme/UIText";
-import {Check, ChevronsUpDown, LockKeyhole, XIcon} from "lucide-react";
+import {Check, ChevronsUpDown} from "lucide-react";
 import {Command, CommandGroup, CommandItem, CommandList} from "@/components/ui/command";
 import * as React from "react";
 import {useState} from "react";
 import {Label} from "@/components/ui/label";
 import {useI18n} from "@/locales/client";
-import {useData} from "@/components/contexts/DataContext";
 import {ClearFieldButton} from "@/components/theme/ClearFieldButton";
 
 export const DropdownCurrencySelectFieldWithLabel = ({data, fieldValue, onSelect, onClear, label}) =>{
@@ -16,7 +15,6 @@ export const DropdownCurrencySelectFieldWithLabel = ({data, fieldValue, onSelect
     const [openDropdown, setOpenDropdown] = useState(false)
     const [selected, setSelected] = useState(fieldValue || '')
     const t = useI18n()
-    const {userGroups} = useData()
 
     return(
 

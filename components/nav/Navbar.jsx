@@ -1,13 +1,10 @@
 "use client";
 import {
-	CircleCheckBig,
 	Copyright,
 	LogOut,
-	NotebookPen,
 	Plus,
 	RefreshCw,
-	SettingsIcon,
-	Users
+	SettingsIcon
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +14,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { useCurrentLocale, useScopedI18n } from "@/locales/client";
+import { useScopedI18n } from "@/locales/client";
 import UIText from "@/components/theme/UIText";
 import usePWAStatus from "@/lib/hooks/usePWAStatus";
 import { Button } from "@/components/ui/button";
@@ -203,7 +200,7 @@ const Sidebar = ({ open, onOpenChange, isPWAInstalled }) => {
 
 					<div className={'mx-6 !mt-4 px-4 pt-6 flex justify-center items-center gap-1'} dir={'ltr'}>
 						<Copyright className={'w-3 h-3 stroke-[1.5]'} />
-						<a href="https://github.com/sikandarchishty" className={'font-medium text-sm'}>Sikandar Ali</a>
+						<a href="https://sikandar.info" className={'font-medium text-sm'}>Sikandar Ali</a>
 					</div>
 
 					<div className={'flex gap-4 justify-center text-sm mt-8 mb-4'}>
@@ -238,9 +235,6 @@ const Sidebar = ({ open, onOpenChange, isPWAInstalled }) => {
 };
 
 const MenuItem = ({ label, href, isActivePath, icon }) => {
-	const pathname = usePathname()
-	const locale = useCurrentLocale()
-
 	return (
 		<Link
 			href={href}

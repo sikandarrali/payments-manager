@@ -1,27 +1,12 @@
 "use client"
 import { useNetworkStatus } from "@/lib/hooks/useNetworkStatus";
-import {useLayoutEffect, useRef, useState} from "react";
+import {useState} from "react";
 import { WifiOff } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const NetworkStatusIndicator = () => {
-    const hasInternetAccess = useNetworkStatus();
-    const firstUpdate = useRef(true);
-    const [show, setShow] = useState(false);
-
-    // useLayoutEffect(() => {
-    //     if (firstUpdate.current) {
-    //         firstUpdate.current = false;
-    //         return;
-    //     }
-    //     if (hasInternetAccess) {
-    //         setShow(false);
-    //         document.body.style.overflow = '';
-    //     } else {
-    //         setShow(true);
-    //         document.body.style.overflow = 'hidden';
-    //     }
-    // }, [hasInternetAccess]);
+    useNetworkStatus();
+    const [show] = useState(false);
 
     return (
         <>

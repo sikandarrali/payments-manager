@@ -5,11 +5,9 @@ import { useState } from "react";
 import { useScopedI18n } from "@/locales/client";
 import { useAuth } from "@/components/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { Globe, Paintbrush, Pencil, TypeOutline, User } from "lucide-react";
+import { Paintbrush, Pencil, User } from "lucide-react";
 import { EditProfile } from "@/components/settings/EditProfile";
-import { EditLanguage } from "@/components/settings/EditLanguage";
-import { EditFontSize } from "@/components/settings/EditFontSize";
-import { GetCurrentFontSize, GetCurrentLanguage, GetCurrentTheme } from "@/lib/utils";
+import { GetCurrentTheme } from "@/lib/utils";
 import { EditTheme } from "@/components/settings/EditTheme";
 import { useApp } from "@/components/contexts/AppContext";
 
@@ -18,8 +16,6 @@ export default function Settings() {
     const { user } = useAuth()
 
     const [openEditProfile, setOpenEditProfile] = useState(false)
-    const [openEditLanguage, setOpenEditLanguage] = useState(false)
-    const [openEditFontSize, setOpenEditFontSize] = useState(false)
     const [openEditTheme, setOpenEditTheme] = useState(false)
 
     const { currentTheme } = useApp()
@@ -71,8 +67,6 @@ export default function Settings() {
             </div> */}
 
             <EditProfile open={openEditProfile} onOpenChange={setOpenEditProfile} />
-            {/* <EditLanguage open={openEditLanguage} onOpenChange={setOpenEditLanguage} /> */}
-            {/* <EditFontSize open={openEditFontSize} onOpenChange={setOpenEditFontSize} /> */}
             <EditTheme open={openEditTheme} onOpenChange={setOpenEditTheme} />
 
         </PageContainer>

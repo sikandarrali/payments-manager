@@ -22,7 +22,7 @@ export default function Page() {
 function Dashboard() {
 	const scrollRef = useRef(null);
 	// const [searchTerm, setSearchTerm] = useState("")
-	const { items, defaultItems } = useData()
+	const { items } = useData()
 	const [filterBy, setFilterBy] = useState("payment")
 
 	useEffect(() => {

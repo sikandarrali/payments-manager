@@ -12,7 +12,7 @@ export default function Home() {
 
                 <div className={'flex flex-col gap-1'}>
                     <UIText textOrientation={'left'} variant={'lg'} weight={'semibold'} text={'Introduction'} />
-                    <UIText textOrientation={'left'} text={`Welcome to Payments Manager ("we", "our", "us"). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, and protect your information when you use our marriage expense and gift tracking services (the "Service").`} />
+                    <UIText textOrientation={'left'} text={`Welcome to Payments Manager ("we", "our", "us"). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, and protect your information when you use our recurring payment and income tracking services (the "Service").`} />
                 </div>
 
                 <div className={'flex flex-col gap-8'}>
@@ -40,6 +40,22 @@ export default function Home() {
                         <UIText textOrientation={'left'} weight={'semibold'} text={'Non-Personal Information'} />
                         <UIText textOrientation={'left'} text={'We DO NOT track, store any pages you visit, track ip address, browser or device information'} />
                     </div>
+                </div>
+
+                <div className={'flex flex-col gap-4'}>
+                    <UIText textOrientation={'left'} variant={'lg'} weight={'semibold'} text={'Cookies'} />
+                    <UIText textOrientation={'left'} text={'We use a small number of strictly necessary cookies to operate the Service. We do not use cookies for advertising or tracking.'} />
+                    <ul className={'list-disc ml-5'}>
+                        <li>
+                            <UIText textOrientation={'left'} weight={'semibold'} text={'Session cookie: '} />
+                            <UIText textOrientation={'left'} text={'Keeps you signed in so you don\'t have to log in on every visit.'} />
+                        </li>
+                        <li>
+                            <UIText textOrientation={'left'} weight={'semibold'} text={'Locale cookie: '} />
+                            <UIText textOrientation={'left'} text={'Remembers your selected language.'} />
+                        </li>
+                    </ul>
+                    <UIText textOrientation={'left'} text={'You can block or delete cookies through your browser settings, but doing so may prevent you from staying logged in.'} />
                 </div>
 
                 <div className={'flex flex-col gap-4'}>
@@ -87,8 +103,11 @@ export default function Home() {
 
                 <div className={'flex flex-col gap-4'}>
                     <UIText textOrientation={'left'} variant={'lg'} weight={'semibold'} text={'Contact Us'} />
-                    <UIText textOrientation={'left'} text={'If you have any questions about this Privacy Policy, please contact us at '} />
-                    <UIText textOrientation={'left'} weight={'semibold'} text={'aasaanapps.store@gmail.com'} />
+                    <UIText textOrientation={'left'} text={'If you have any questions about this Privacy Policy, please open an issue on our GitHub repository at '} />
+
+                    <a href="https://github.com/sikandarrali/payments-manager/issues" target="_blank" rel="noopener noreferrer" className={'underline'}>
+                        <UIText textOrientation={'left'} weight={'semibold'} text={'github.com/sikandarrali/payments-manager/issues'} />
+                    </a>
                 </div>
 
 

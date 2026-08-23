@@ -1,15 +1,12 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { ArrowDownIcon, ArrowUpIcon, Banknote, WalletIcon } from 'lucide-react'
-import { Progress } from '../ui/progress'
 import { useData } from '../contexts/DataContext'
 import { GetMonthNameYearFromDateObject } from '@/lib/GetMonthNameYearFromDateObject'
 
 const Summary = () => {
 
     const { currentMonth, sumOfIncomes, sumOfPayments, sumOfStillDue, sumOfTotalExpense } = useData()
-
-    const percentage = sumOfIncomes > 0 ? (sumOfPayments / sumOfIncomes) * 100 : 0
 
     return (
         <div className="flex flex-row overflow-x-auto gap-4 pb-2 -mt-4">

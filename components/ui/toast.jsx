@@ -1,5 +1,4 @@
 "use client";
-import { Cross2Icon } from "@radix-ui/react-icons";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva } from "class-variance-authority";
 import * as React from "react";

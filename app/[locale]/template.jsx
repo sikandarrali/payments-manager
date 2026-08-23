@@ -1,9 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
-import {useParams, usePathname} from "next/navigation";
 
 const Template = ({ children }) => {
-	const pathname = usePathname()
 	return (
 		// <motion.div
 		// 	initial={{ y: 5, opacity: 0 }}

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Asterisk } from "lucide-react";
 import { Label } from "../ui/label";
-import { useI18n, useScopedI18n } from "@/locales/client";
+import { useI18n } from "@/locales/client";
 import UIText from "@/components/theme/UIText";
 
 const FormLabel = ({ title, touched, errors, requiredClassName }) => {
