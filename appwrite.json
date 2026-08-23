@@ -1,0 +1,102 @@
+{
+    "projectName": "Payments Manager",
+    "databases": [
+        {
+            "$id": "payments-manager",
+            "name": "Payments Manager",
+            "enabled": true
+        }
+    ],
+    "collections": [
+        {
+            "$id": "items",
+            "$permissions": [
+                "create(\"users\")"
+            ],
+            "databaseId": "payments-manager",
+            "name": "items",
+            "enabled": true,
+            "documentSecurity": true,
+            "attributes": [
+                {
+                    "key": "title",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 200
+                },
+                {
+                    "key": "description",
+                    "type": "string",
+                    "required": false,
+                    "array": false,
+                    "size": 200
+                },
+                {
+                    "key": "amount",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 30
+                },
+                {
+                    "key": "date",
+                    "type": "datetime",
+                    "required": true,
+                    "array": false
+                },
+                {
+                    "key": "endDate",
+                    "type": "datetime",
+                    "required": false,
+                    "array": false
+                },
+                {
+                    "key": "frequency",
+                    "type": "string",
+                    "required": false,
+                    "array": false,
+                    "elements": ["monthly", "quarterly", "semiannual", "yearly"],
+                    "format": "enum"
+                },
+                {
+                    "key": "isRecurring",
+                    "type": "boolean",
+                    "required": true,
+                    "array": false,
+                    "default": false
+                },
+                {
+                    "key": "isPaid",
+                    "type": "boolean",
+                    "required": false,
+                    "array": false,
+                    "default": false
+                },
+                {
+                    "key": "paidMonths",
+                    "type": "string",
+                    "required": false,
+                    "array": true,
+                    "size": 10
+                },
+                {
+                    "key": "type",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "elements": ["payment", "income"],
+                    "format": "enum"
+                }
+            ],
+            "indexes": [
+                {
+                    "key": "type_index",
+                    "type": "key",
+                    "attributes": ["type"],
+                    "orders": ["ASC"]
+                }
+            ]
+        }
+    ]
+}
