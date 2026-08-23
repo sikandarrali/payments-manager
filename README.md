@@ -3,7 +3,7 @@
 
 Payments Manager keeps every recurring bill and paycheck in one place. Add income and expense sources that repeat monthly — or one-time payments for anything that doesn't — and each month view auto-calculates what's paid, what's still due, and your running balance in small summary widgets up top. Items are listed sorted by due date, can be marked paid/unpaid with one tap, and can be given an end date so they quietly drop off once they're no longer relevant. It's a full PWA, installable on any device, and built mobile-first — the UI is designed primarily for phone-sized screens.
 
-[![App Link](https://img.shields.io/badge/demo-payments-manager.sikandar.info-blue)](https://payments-manager.sikandar.info)
+[![App Link](https://img.shields.io/badge/demo-payments--manager.sikandar.info-blue)](https://payments-manager.sikandar.info)
 
 ## Features
 - **Recurring & one-time payments** — track monthly income/expense sources, or add a single one-off payment
