@@ -1,6 +1,4 @@
-import { Loader2Icon } from "lucide-react";
 import {useScopedI18n} from "@/locales/client";
-import {cn} from "@/lib/utils";
 import UIText from "@/components/theme/UIText";
 
 const Loader = ({hideText, message}) => {

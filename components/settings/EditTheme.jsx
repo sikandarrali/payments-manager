@@ -30,7 +30,7 @@ import {useApp} from "@/components/contexts/AppContext";
 export const EditTheme = ({ open, onOpenChange }) => {
     const [adding, setAdding] = useState(false);
     const [disabled, setDisabled] = useState(false);
-    const {user, setUser} = useAuth()
+    const {user} = useAuth()
     const t = useScopedI18n('settings.theme');
     const {currentTheme, setCurrentTheme} = useApp()
 

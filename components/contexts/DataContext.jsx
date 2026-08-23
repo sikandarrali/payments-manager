@@ -1,17 +1,15 @@
 "use client"
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { client, COLLECTION_ID_ITEMS, DATABASE_ID, teams } from "../appwrite/appwrite";
-import { useAuth } from "@/components/contexts/AuthContext";
+import { createContext, useContext, useEffect, useState } from "react";
+import { client, COLLECTION_ID_ITEMS, DATABASE_ID } from "../appwrite/appwrite";
 import { db } from "../appwrite/database";
 import { Query } from "appwrite";
-import Loader from "../loaders/loader";
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
     const [items, setItems] = useState([]);
     const [defaultItems, setDefaultItems] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [, setLoading] = useState(true);
 
     const today = new Date();
     const [currentMonth, setCurrentMonth] = useState({

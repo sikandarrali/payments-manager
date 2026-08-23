@@ -1,5 +1,5 @@
 import {Button} from "@/components/ui/button";
-import {Pen, SquarePen, Trash2, XIcon} from "lucide-react";
+import {Pen, Trash2, XIcon} from "lucide-react";
 import UIText from "@/components/theme/UIText";
 import {useI18n} from "@/locales/client";
 

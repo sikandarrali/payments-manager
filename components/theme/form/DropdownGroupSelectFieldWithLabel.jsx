@@ -2,7 +2,7 @@ import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
 import UIText from "@/components/theme/UIText";
-import {Check, ChevronsUpDown, LockKeyhole, XIcon} from "lucide-react";
+import {Check, ChevronsUpDown, LockKeyhole} from "lucide-react";
 import {Command, CommandGroup, CommandItem, CommandList} from "@/components/ui/command";
 import * as React from "react";
 import {useState} from "react";

@@ -12,7 +12,7 @@ export default function Home() {
 
                 <div className={'flex flex-col gap-1'}>
                     <UIText textOrientation={'left'} variant={'lg'} weight={'semibold'} text={'Introduction'} />
-                    <UIText textOrientation={'left'} text={`Welcome to Payments Manager ("we", "our", "us"). These Terms of Service ("Terms") govern your use of our marriage expense and gift tracking services (the "Service").`} />
+                    <UIText textOrientation={'left'} text={`Welcome to Payments Manager ("we", "our", "us"). These Terms of Service ("Terms") govern your use of our recurring payment and income tracking services (the "Service").`} />
                 </div>
 
                 <div className={'flex flex-col gap-1'}>
@@ -93,8 +93,10 @@ export default function Home() {
 
                 <div className={'flex flex-col gap-4'}>
                     <UIText textOrientation={'left'} variant={'lg'} weight={'semibold'} text={'Contact Us'} />
-                    <UIText textOrientation={'left'} text={'If you have any questions about this these Terms, please contact us at '} />
-                    <UIText textOrientation={'left'} weight={'semibold'} text={'aasaanapps.store@gmail.com'} />
+                    <UIText textOrientation={'left'} text={'If you have any questions about these Terms, please open an issue on our GitHub repository at '} />
+                    <a href="https://github.com/sikandarrali/payments-manager/issues" target="_blank" rel="noopener noreferrer" className={'underline'}>
+                        <UIText textOrientation={'left'} weight={'semibold'} text={'github.com/sikandarrali/payments-manager/issues'} />
+                    </a>
                 </div>
 
 

@@ -3,8 +3,7 @@ import { NetworkStatusIndicator } from "@/components/NetworkStatus/NetworkStatus
 import HolyLoader from "holy-loader";
 import Providers from "@/components/providers/Providers";
 import { cn } from "@/lib/utils";
-import { Inter, Noto_Nastaliq_Urdu, Poppins, Work_Sans } from "@next/font/google";
-import localFont from "@next/font/local";
+import { Poppins, Work_Sans } from "@next/font/google";
 
 
 const fontSans = Work_Sans({
