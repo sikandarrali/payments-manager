@@ -7,8 +7,9 @@ import {Button} from "@/components/ui/button";
 import {useAuth} from "@/components/contexts/AuthContext";
 import Link from "next/link";
 import UIText from "@/components/theme/UIText";
-import {useScopedI18n} from "@/locales/client";
+import {useCurrentLocale, useScopedI18n} from "@/locales/client";
 import {Logo} from "@/components/nav/Logo";
+import {withLocale} from "@/lib/routes";
 
 const Page = () => {
 	const searchParams = useSearchParams()
@@ -18,6 +19,7 @@ const Page = () => {
 	const teamId = searchParams.get('teamId');
 	const t = useScopedI18n('joinGroup');
 	const {user} = useAuth()
+	const locale = useCurrentLocale()
 	const [error, setError] = useState({correct: true, text:''})
 	const [showError, setShowError] = useState(false)
 
@@ -68,7 +70,7 @@ const Page = () => {
 					<div className={'flex flex-col gap-4 mt-16 '}>
 						{!user && <UIText text={t('loginAndCheckGroups')}/>}
 
-						<Link href={'/groups'}>
+						<Link href={withLocale('/groups', locale)}>
 							<Button
 								variant={'outline'}
 								className={'gap-2 rtl:flex-row-reverse'}

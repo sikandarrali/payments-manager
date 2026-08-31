@@ -5,10 +5,12 @@ import UIText from "@/components/theme/UIText";
 import Link from "next/link";
 import { Logo } from "@/components/nav/Logo";
 import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
-import { useScopedI18n } from "@/locales/client";
+import { useCurrentLocale, useScopedI18n } from "@/locales/client";
+import { withLocale } from "@/lib/routes";
 
 export const Homepage = () => {
 	const t = useScopedI18n('home')
+	const locale = useCurrentLocale()
 
 	return (
 		<PageContainer hideBackButton hideAddButton hideNavbar>
@@ -26,7 +28,7 @@ export const Homepage = () => {
 					</p>
 				</div>
 
-				<Link href={'/login'} className="mx-4 mt-8">
+				<Link href={withLocale('/login', locale)} className="mx-4 mt-8">
 					<Button className="w-full ltr:py-4 rtl:py-5">
 						<UIText weight={'semibold'} variant={'button'} text={t('getStarted')} />
 					</Button>
@@ -37,9 +39,9 @@ export const Homepage = () => {
 				</p>
 
 				<div className={'text-sm mt-8 mb-4 text-center left-1/2 w-full -translate-x-1/2 fixed bottom-10'} dir={'ltr'}>
-					<Link href={'/terms-of-service'} className={'text-primary font-semibold'}>Terms of Service</Link>{" "}
+					<Link href={withLocale('/terms-of-service', locale)} className={'text-primary font-semibold'}>Terms of Service</Link>{" "}
 					and{" "}
-					<Link href={'/privacy-policy'} className={'text-primary font-semibold'}>Privacy Policy</Link>
+					<Link href={withLocale('/privacy-policy', locale)} className={'text-primary font-semibold'}>Privacy Policy</Link>
 				</div>
 			</div>
 		</PageContainer>
