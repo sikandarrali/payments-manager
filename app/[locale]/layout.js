@@ -33,8 +33,16 @@ const APP_NAME = "Payments Manager";
 const APP_DEFAULT_TITLE = "Payments Manager";
 const APP_TITLE_TEMPLATE = "Payments Manager";
 const APP_DESCRIPTION = "Track your payments in one place";
+const APP_URL = "https://payments-manager.sikandar.info";
+const APP_OG_IMAGE = {
+	url: "/og-image.png",
+	width: 1200,
+	height: 630,
+	alt: APP_NAME,
+};
 
 export const metadata = {
+	metadataBase: new URL(APP_URL),
 	applicationName: APP_NAME,
 	title: {
 		default: APP_DEFAULT_TITLE,
@@ -53,20 +61,23 @@ export const metadata = {
 	},
 	openGraph: {
 		type: "website",
+		url: APP_URL,
 		siteName: APP_NAME,
 		title: {
 			default: APP_DEFAULT_TITLE,
 			template: APP_TITLE_TEMPLATE,
 		},
 		description: APP_DESCRIPTION,
+		images: [APP_OG_IMAGE],
 	},
 	twitter: {
-		card: "summary",
+		card: "summary_large_image",
 		title: {
 			default: APP_DEFAULT_TITLE,
 			template: APP_TITLE_TEMPLATE,
 		},
 		description: APP_DESCRIPTION,
+		images: [APP_OG_IMAGE],
 	},
 };
 
