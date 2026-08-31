@@ -11,7 +11,7 @@ Payments Manager keeps every recurring bill and paycheck in one place. Add incom
 - **Live summary widgets** — balance, amount still due, and after-due balance update automatically
 - **Mark as paid/unpaid** — one tap to toggle status per item
 - **End dates** — set an end date on a recurring item and it stops appearing after that
-- **Multi-language** — UI translations managed via Localazy (English, Urdu)
+- **Multi-language infrastructure** — built on [next-international](https://next-international.vercel.app/) with translations synced via [Localazy](https://localazy.com/). The app currently ships English only — a second locale (Urdu) exists but isn't enabled yet, since its translations are incomplete. Translation strings live in [locales/compiled-lang/en/translations.json](locales/compiled-lang/en/translations.json) (and the equivalent `ur/translations.json`), a nested/namespaced JSON keyed by area (`alerts`, `buttons`, `home`, `settings`, etc.) — these files are pulled from Localazy via `npm run localazy:download`. Translation fixes and new languages are welcome via PR: edit/add the relevant `locales/compiled-lang/<lang>/translations.json`, add a thin `locales/<Language>.js` wrapper matching the pattern in [locales/English.js](locales/English.js), then wire it into [locales/client.js](locales/client.js), [locales/server.js](locales/server.js), and the locale list in [middleware.js](middleware.js).
 - **Theme switching** — choose from 6 pre-built themes each having their own light/dark modes
 - **Installable PWA** — installable like a native app on mobile and desktop
 

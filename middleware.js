@@ -45,17 +45,16 @@ export default async function middleware(request) {
     // }
 
     if (!user && isProtectedPath) {
-        return NextResponse.redirect(new URL("/login", request.url));
+        const localeMatch = pathname.match(/^\/(en|ur)(\/|$)/);
+        const loginPath = localeMatch ? `/${localeMatch[1]}/login` : "/login";
+        return NextResponse.redirect(new URL(loginPath, request.url));
     }
 
     const I18nMiddleware = createI18nMiddleware({
-        // locales: ['ur', 'en'],
-        locales: ['en'],
-        // defaultLocale: "ur",
+        locales: ['en', 'ur'],
         defaultLocale: "en",
         urlMappingStrategy: 'rewrite',
         resolveLocaleFromRequest: request => {
-            // return user?.prefs?.lang || 'ur'
             return user?.prefs?.lang || 'en'
         }
     })

@@ -2,17 +2,18 @@
 import { useAuth } from "@/components/contexts/AuthContext";
 import PageContainer from "@/components/providers/PageContainer";
 import { Button } from "@/components/ui/button";
-import { useScopedI18n } from "@/locales/client";
+import { useCurrentLocale, useScopedI18n } from "@/locales/client";
 import UIText from "@/components/theme/UIText";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { HOMEPAGE_ROUTE } from "@/lib/routes";
+import { HOMEPAGE_ROUTE, withLocale } from "@/lib/routes";
 import { Logo } from "@/components/nav/Logo";
 import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
 
 export default function Home() {
 	const { onGoogleWithLogin, user } = useAuth();
 	const t = useScopedI18n('login')
+	const locale = useCurrentLocale()
 
 	if (user) {
 		redirect(HOMEPAGE_ROUTE)
@@ -57,9 +58,9 @@ export default function Home() {
 
 				<div className={'text-sm mt-8 mb-4 text-center left-1/2 w-full -translate-x-1/2 fixed bottom-10'} dir={'ltr'}>
 					<span>By Logging In, you agree to our</span><br />
-					<Link href={'/terms-of-service'} className={'text-primary font-semibold'}>Terms of Service</Link>{" "}
+					<Link href={withLocale('/terms-of-service', locale)} className={'text-primary font-semibold'}>Terms of Service</Link>{" "}
 					and{" "}
-					<Link href={'/privacy-policy'} className={'text-primary font-semibold'}>Privacy Policy</Link>{" "}
+					<Link href={withLocale('/privacy-policy', locale)} className={'text-primary font-semibold'}>Privacy Policy</Link>{" "}
 				</div>
 			</div>
 		</PageContainer>

@@ -5,10 +5,11 @@ import { useState } from "react";
 import { useScopedI18n } from "@/locales/client";
 import { useAuth } from "@/components/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { Paintbrush, Pencil, User } from "lucide-react";
+import { Globe, Paintbrush, Pencil, User } from "lucide-react";
 import { EditProfile } from "@/components/settings/EditProfile";
-import { GetCurrentTheme } from "@/lib/utils";
+import { GetCurrentLanguage, GetCurrentTheme } from "@/lib/utils";
 import { EditTheme } from "@/components/settings/EditTheme";
+import { EditLanguage } from "@/components/settings/EditLanguage";
 import { useApp } from "@/components/contexts/AppContext";
 
 export default function Settings() {
@@ -17,6 +18,7 @@ export default function Settings() {
 
     const [openEditProfile, setOpenEditProfile] = useState(false)
     const [openEditTheme, setOpenEditTheme] = useState(false)
+    const [openEditLanguage, setOpenEditLanguage] = useState(false)
 
     const { currentTheme } = useApp()
 
@@ -37,12 +39,12 @@ export default function Settings() {
                 />
 
                 {/* Language */}
-                {/* <SettingsMenu
-                    icon={<Globe className={'w-5 h-5 text-primary'}/>}
+                <SettingsMenu
+                    icon={<Globe className={'w-5 h-5 text-primary'} />}
                     label={t('language.title')}
-                    settingsValue={t(`language.${GetCurrentLanguage(user?.prefs?.lang || "ur")}`)}
-                    toggleEdit={()=> setOpenEditLanguage(true)}
-                /> */}
+                    settingsValue={t(`language.${GetCurrentLanguage(user?.prefs?.lang || "en")}`)}
+                    toggleEdit={() => setOpenEditLanguage(true)}
+                />
 
                 {/* Font Size */}
                 {/* <SettingsMenu
@@ -67,6 +69,7 @@ export default function Settings() {
             </div> */}
 
             <EditProfile open={openEditProfile} onOpenChange={setOpenEditProfile} />
+            <EditLanguage open={openEditLanguage} onOpenChange={setOpenEditLanguage} />
             <EditTheme open={openEditTheme} onOpenChange={setOpenEditTheme} />
 
         </PageContainer>

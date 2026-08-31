@@ -4,9 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import UIText from "@/components/theme/UIText";
 import { LOCAL_COOKIE_NOTICE_ACK_NAME } from "@/lib/defaults";
+import { useCurrentLocale } from "@/locales/client";
+import { withLocale } from "@/lib/routes";
 
 export const CookieBanner = () => {
     const [show, setShow] = useState(false);
+    const locale = useCurrentLocale();
 
     useEffect(() => {
         if (typeof window !== "undefined" && !localStorage.getItem(LOCAL_COOKIE_NOTICE_ACK_NAME)) {
@@ -31,7 +34,7 @@ export const CookieBanner = () => {
                     text={
                         <>
                             We use strictly necessary cookies to keep you signed in and remember your language. No tracking or advertising cookies.{" "}
-                            <Link href="/privacy-policy" className="underline text-foreground">
+                            <Link href={withLocale('/privacy-policy', locale)} className="underline text-foreground">
                                 Learn more
                             </Link>
                         </>
