@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { useCurrentLocale, useScopedI18n } from "@/locales/client";
 import UIText from "@/components/theme/UIText";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { HOMEPAGE_ROUTE, withLocale } from "@/lib/routes";
 import { Logo } from "@/components/nav/Logo";
 import { DarkModeToggle } from "@/components/theme/DarkModeToggle";
@@ -14,9 +15,13 @@ export default function Home() {
 	const { onGoogleWithLogin, user } = useAuth();
 	const t = useScopedI18n('login')
 	const locale = useCurrentLocale()
+	const router = useRouter()
+
+	useEffect(() => {
+		if (user) router.replace(HOMEPAGE_ROUTE)
+	}, [user])
 
 	if (user) {
-		redirect(HOMEPAGE_ROUTE)
 		return <></>
 	}
 

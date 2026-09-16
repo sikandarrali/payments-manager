@@ -3,25 +3,22 @@ import { ENDPOINT, PROJECT_ID } from "@/components/appwrite/appwrite";
 import { DecodeUserId } from "@/lib/EncodeDecode";
 import { NextResponse } from "next/server";
 import { HOMEPAGE_ROUTE, LOCALE_PROTECTED_ROUTES, LOCALE_PUBLIC_ROUTES } from "@/lib/routes";
-const sdk = require('node-appwrite');
-
-let client = new sdk.Client();
-client
-    .setEndpoint(ENDPOINT) // Your API Endpoint
-    .setProject(PROJECT_ID) // Your project ID
-    .setKey(process.env.APPWRITE_API_KEY) // Your secret API key
-    ;
-const users = new sdk.Users(client);
 
 const getCurrentUser = async (userSessionCookie) => {
-    let response = null
+    if (!userSessionCookie) return null
     try {
-        response = await users.get(DecodeUserId(userSessionCookie.value));
+        const res = await fetch(`${ENDPOINT}/users/${DecodeUserId(userSessionCookie.value)}`, {
+            headers: {
+                'X-Appwrite-Project': PROJECT_ID,
+                'X-Appwrite-Key': process.env.APPWRITE_API_KEY,
+            },
+        });
+        if (!res.ok) return null
+        return await res.json()
     }
     catch (e) {
-        response = null
+        return null
     }
-    return response
 }
 
 export default async function middleware(request) {
