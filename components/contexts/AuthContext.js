@@ -41,7 +41,8 @@ export const AuthProvider = ({ children }) => {
 			const currentUser = await account.get();
 			setUser(currentUser)
 			userPrefs = currentUser.prefs
-			Cookies.set(process.env.NEXT_PUBLIC_USER_SESSION_COOKIE_NAME, EncodeUserId(currentUser.$id), { sameSite: 'None', secure: true });
+			const isSecureContext = window.location.protocol === 'https:';
+			Cookies.set(process.env.NEXT_PUBLIC_USER_SESSION_COOKIE_NAME, EncodeUserId(currentUser.$id), { sameSite: isSecureContext ? 'None' : 'Lax', secure: isSecureContext });
 			localStorage.setItem(LOCAL_THEME_NAME, currentUser?.prefs?.theme || DEFAULT_THEME.name)
 
 			fetchGoogleUserData(currentSession.providerAccessToken)
@@ -90,8 +91,8 @@ export const AuthProvider = ({ children }) => {
 	const onGoogleWithLogin = async () => {
 		account.createOAuth2Session(
 			"google",
-			process.env.NEXT_PUBLIC_CALLBACK_AFTER_LOGIN,
-			process.env.NEXT_PUBLIC_CALLBACK_AFTER_LOGIN_FAILED
+			`${window.location.origin}/`,
+			`${window.location.origin}/404`
 		);
 	};
 
